@@ -6,7 +6,7 @@ Welcome to the Python Algorithms Playground! This repository is dedicated to lea
 
 - **Sorting Algorithms**: Implementations of classic sorting algorithms such as Bubble Sort, Quick Sort, Merge Sort, and more.
 - **Searching Algorithms**: Algorithms like Binary Search, Linear Search, Depth-First Search (DFS), Breadth-First Search (BFS), etc.
-- **Graph Algorithms**: Algorithms for graph traversal, shortest path algorithms like Dijkstra's algorithm, minimum spanning tree algorithms, etc.
+- **Graph Algorithms**: Algorithms for graph traversal, shortest path algorithms like Dijkstra's algorithm, A*, etc.
 - **Dynamic Programming**: Solutions for problems using dynamic programming techniques.
 - **Exercises**: Various algorithmic problems and exercises to practice what you've learned.
 
