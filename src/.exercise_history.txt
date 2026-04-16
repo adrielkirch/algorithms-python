@@ -1,0 +1,8 @@
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\tree\construct-binary-tree-from-preorder-and-postorder-traversal.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\array\two_pointers\product_nums_list_execept_itself.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\number_of_island-II.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\word_search.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\interval\merge-intervals.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\stack\daily-temperatures.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\heap\merge_k_sorted_linked_lists.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\dynamic_programming\word-break.ipynb

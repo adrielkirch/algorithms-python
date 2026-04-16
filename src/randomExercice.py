@@ -32,14 +32,31 @@ def get_all_exercises() -> List[Path]:
 
 
 def get_random_exercise() -> Path:
-    """
-    Seleciona um exercício aleatório
-    
-    Returns:
-        Path do arquivo .ipynb selecionado
-    """
     exercises = get_all_exercises()
-    selected = random.choice(exercises)
+    
+    # Criar um arquivo simples de histórico para evitar repetições
+    history_file = Path(__file__).parent / ".exercise_history.txt"
+    
+    if history_file.exists():
+        past_exercises = history_file.read_text().splitlines()
+    else:
+        past_exercises = []
+
+    # Filtra exercícios que ainda não foram feitos
+    available = [e for e in exercises if str(e) not in past_exercises]
+
+    # Se todos já foram feitos, reseta o histórico
+    if not available:
+        print("🔄 All exercises completed! Resetting history.")
+        available = exercises
+        past_exercises = []
+
+    selected = random.choice(available)
+
+    # Salva no histórico
+    with open(history_file, "a") as f:
+        f.write(str(selected) + "\n")
+
     return selected
 
 
