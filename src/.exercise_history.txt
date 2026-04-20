@@ -20,3 +20,15 @@ C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\strings\longest_common
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\stack\is_valid_parentheses.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\interval\meeting-rooms.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\alien_dictionary.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\stack\html-checking.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\array\hashmap\longest-consecutive-sequence.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\rotting-oranges.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\graph-valid-tree.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\math\fibbonaci_number.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\stack\daily-temperatures.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\array\greedy\min_buy_and_max_sell_profit.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\strings\is_palindrome.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\word_search.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\array\hashmap\minimum_distances_found.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\number-of-connected-components-in-an-undirected-graph.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\word_search_2.ipynb
