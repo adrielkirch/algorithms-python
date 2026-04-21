@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-🎯 Random Exercise Selector
-Picks a random .ipynb exercise from /src/exercices/ directory
+🎯 Random Exercise Selector (Targeted Edition)
+Picks a random exercise, optionally filtered by a "Hard" list.
 """
 
 import random
@@ -9,32 +9,61 @@ import os
 from pathlib import Path
 from typing import Optional, List
 
+# Define the specific filenames you consider difficult
+HARD_LIST = [
+    "alien_dictionary.ipynb",
+    "word_search_2.ipynb",
+    "number_of_island-II.ipynb",
+    "min-cost-to-connect-all-points.ipynb",
+    "word-break.ipynb",
+    "word-break-ii.ipynb",
+    "construct-binary-tree-from-preorder-and-inorder-traversal.ipynb",
+    "construct-binary-tree-from-preorder-and-postorder-traversal.ipynb",
+    "minimum_window_substring.ipynb",
+    "lru-cache.ipynb",
+    "insert-interval.ipynb",
+    "longest-repeating-character-replacement.ipynb",
+    "merge_two_sorted_list.ipynb",
+    "merge_two_sorted_list.ipynb",
+    "reorder_linked_list.ipynb",
+    "house-robber-3.ipynb",
+    "daily-temperatures",
+    "largest-rectangle-in-histogram.ipynb",
+    "clone_graph.ipynb"
+]
 
-def get_all_exercises() -> List[Path]:
+def get_all_exercises(target_list: Optional[List[str]] = None) -> List[Path]:
     """
-    Recursivamente busca todos os arquivos .ipynb em /src/exercices/
-    
-    Returns:
-        Lista de caminhos absolutos para arquivos .ipynb
+    Recursively finds .ipynb files. If target_list is provided, 
+    only returns files that match those names.
     """
     exercises_dir = Path(__file__).parent / "exercices"
     
     if not exercises_dir.exists():
-        raise FileNotFoundError(f"Diretório não encontrado: {exercises_dir}")
+        raise FileNotFoundError(f"Directory not found: {exercises_dir}")
     
-    # Encontra todos os arquivos .ipynb recursivamente
-    notebooks = list(exercises_dir.rglob("*.ipynb"))
+    # Get all notebooks
+    all_notebooks = list(exercises_dir.rglob("*.ipynb"))
+    
+    if target_list:
+        # Filter: only keep if the filename is in your Hard List
+        notebooks = [e for e in all_notebooks if e.name in target_list]
+    else:
+        notebooks = all_notebooks
     
     if not notebooks:
-        raise FileNotFoundError(f"Nenhum arquivo .ipynb encontrado em {exercises_dir}")
+        raise FileNotFoundError(f"No matching exercises found in {exercises_dir}")
     
     return sorted(notebooks)
 
 
-def get_random_exercise() -> Path:
-    exercises = get_all_exercises()
+def get_random_exercise(only_hard: bool = False) -> Path:
+    """
+    Selects a random exercise from the directory or from the Hard List.
+    """
+    filter_list = HARD_LIST if only_hard else None
+    exercises = get_all_exercises(target_list=filter_list)
     
-    # Criar um arquivo simples de histórico para evitar repetições
     history_file = Path(__file__).parent / ".exercise_history.txt"
     
     if history_file.exists():
@@ -42,39 +71,30 @@ def get_random_exercise() -> Path:
     else:
         past_exercises = []
 
-    # Filtra exercícios que ainda não foram feitos
     available = [e for e in exercises if str(e) not in past_exercises]
 
-    # Se todos já foram feitos, reseta o histórico
     if not available:
-        print("🔄 All exercises completed! Resetting history.")
+        print("🔄 Pool completed! Resetting history for this selection.")
+        # Only reset the items currently in the active pool
         available = exercises
-        past_exercises = []
 
     selected = random.choice(available)
 
-    # Salva no histórico
+    # Save to history
     with open(history_file, "a") as f:
         f.write(str(selected) + "\n")
 
     return selected
 
 
-def print_exercise_info(exercise_path: Path) -> None:
-    """
-    Imprime informações sobre o exercício selecionado
-    
-    Args:
-        exercise_path: Caminho do arquivo .ipynb
-    """
-    # Obtém o caminho relativo a partir do diretório /src/exercices
+def print_exercise_info(exercise_path: Path, mode: str) -> None:
     exercises_base = Path(__file__).parent / "exercices"
     relative_path = exercise_path.relative_to(exercises_base)
     category = relative_path.parent.name
-    filename = exercise_path.stem
+    filename = exercise_path.name # Keeping .ipynb extension in view
     
     print("=" * 70)
-    print("🎲 RANDOM EXERCISE SELECTED")
+    print(f"🎲 RANDOM {mode.upper()} EXERCISE SELECTED")
     print("=" * 70)
     print(f"📁 Category:  {category}")
     print(f"📝 Exercise:  {filename}")
@@ -83,20 +103,22 @@ def print_exercise_info(exercise_path: Path) -> None:
 
 
 def main():
-    """Função principal"""
     try:
-        exercise = get_random_exercise()
-        print_exercise_info(exercise)
+        # Change this to False if you want to pick from ALL exercises
+        FOCUS_ON_HARD = True 
         
-        # Opcionalmente, retorna o caminho para uso programático
+        mode_label = "Hard" if FOCUS_ON_HARD else "General"
+        exercise = get_random_exercise(only_hard=FOCUS_ON_HARD)
+        print_exercise_info(exercise, mode_label)
+        
         return str(exercise)
     
     except FileNotFoundError as e:
-        print(f"❌ Erro: {e}")
+        print(f"❌ Error: {e}")
         return None
 
 
 if __name__ == "__main__":
     result = main()
     if result:
-        print(f"\n✅ Exercise ready at: {result}")
+        print(f"\n✅ Ready to solve: {result}")
