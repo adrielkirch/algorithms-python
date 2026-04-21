@@ -36,3 +36,8 @@ c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\slide_windown\
 c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\linked_list\lru-cache.ipynb
 c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\tree\construct-binary-tree-from-preorder-and-postorder-traversal.ipynb
 c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\graph\word_search_2.ipynb
+c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\graph\min-cost-to-connect-all-points.ipynb
+c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\linked_list\merge_two_sorted_list.ipynb
+c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\dynamic_programming\word-break.ipynb
+c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\graph\clone_graph.ipynb
+c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\linked_list\reorder_linked_list.ipynb
