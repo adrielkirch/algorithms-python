@@ -41,3 +41,10 @@ c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\linked_list\me
 c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\dynamic_programming\word-break.ipynb
 c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\graph\clone_graph.ipynb
 c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\linked_list\reorder_linked_list.ipynb
+c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\tree\construct-binary-tree-from-preorder-and-inorder-traversal.ipynb
+c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\graph\alien_dictionary.ipynb
+c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\dynamic_programming\word-break-ii.ipynb
+c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\dynamic_programming\house-robber-3.ipynb
+c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\stack\largest-rectangle-in-histogram.ipynb
+c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\heap\merge_k_sorted_linked_lists.ipynb
+c:\Users\Samsung\Desktop\projects\algorithms-python\src\exercices\graph\number_of_island-II.ipynb
