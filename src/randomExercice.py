@@ -25,6 +25,7 @@ HARD_LIST = [
     "longest-repeating-character-replacement.ipynb",
     "merge_k_sorted_linked_lists.ipynb",
     "reorder_linked_list.ipynb",
+    "network-delay-time.ipynb",
     "house-robber-3.ipynb",
     "daily-temperatures",
     "largest-rectangle-in-histogram.ipynb",
