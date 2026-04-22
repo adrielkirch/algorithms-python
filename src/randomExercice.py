@@ -29,7 +29,9 @@ HARD_LIST = [
     "house-robber-3.ipynb",
     "daily-temperatures",
     "largest-rectangle-in-histogram.ipynb",
-    "clone_graph.ipynb"
+    "clone_graph.ipynb",
+    "binary-tree-maximum-path-sum.ipynb"
+    ""
 ]
 
 def get_all_exercises(target_list: Optional[List[str]] = None) -> List[Path]:
