@@ -30,7 +30,9 @@ HARD_LIST = [
     "daily-temperatures",
     "largest-rectangle-in-histogram.ipynb",
     "clone_graph.ipynb",
-    "binary-tree-maximum-path-sum.ipynb"
+    "binary-tree-maximum-path-sum.ipynb",
+    "3sum.ipynb",
+    "4sum.ipynb"
     ""
 ]
 
