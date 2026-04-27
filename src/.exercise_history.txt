@@ -6,3 +6,17 @@ C:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\word_search_2.
 C:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\network-delay-time.ipynb
 C:\Users\w515783\Desktop\js\algorithms-python\src\exercices\linked_list\lru-cache.ipynb
 C:\Users\w515783\Desktop\js\algorithms-python\src\exercices\tree\binary-tree-maximum-path-sum.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\interval\insert-interval.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\tree\binary-tree-maximum-path-sum.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\array\hashmap\4sum.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\dynamic_programming\house-robber-3.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\tree\construct-binary-tree-from-preorder-and-postorder-traversal.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\array\hashmap\3sum.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\linked_list\reorder_linked_list.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\slide_windown\longest-repeating-character-replacement.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\slide_windown\minimum_window_substring.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\word_search_2.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\stack\largest-rectangle-in-histogram.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\dynamic_programming\word-break.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\tree\construct-binary-tree-from-preorder-and-inorder-traversal.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\min-cost-to-connect-all-points.ipynb
