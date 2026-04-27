@@ -20,3 +20,4 @@ C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\stack\largest-rectangl
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\dynamic_programming\word-break.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\tree\construct-binary-tree-from-preorder-and-inorder-traversal.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\min-cost-to-connect-all-points.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\alien_dictionary.ipynb
