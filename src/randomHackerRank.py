@@ -37,16 +37,15 @@ def sortear_desafio():
         "Beautiful Triplets",
         "Queen's Attack II",
         "Non-Divisible Subset",
-        "Cut the sticks",
         "Picking Numbers",
         "Climbing the Leaderboard",
         "Subarray Division"
     ]
 
-    escolhido = random.choice(exercicios)
+    picked = random.choice(exercicios)
     
     print("-" * 40)
-    print(f"🚀 Próximo desafio: {escolhido}")
+    print(f"🚀 next challange: {picked}")
     print("-" * 40)
 
 if __name__ == "__main__":
