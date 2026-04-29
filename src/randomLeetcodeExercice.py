@@ -109,10 +109,10 @@ def print_exercise_info(exercise_path: Path, mode: str) -> None:
 def main():
     try:
         # Change this to False if you want to pick from ALL exercises
-        FOCUS_ON_HARD = True 
+        FOCUS_ON_HARD = False
         
         mode_label = "Hard" if FOCUS_ON_HARD else "General"
-        exercise = get_random_exercise(only_hard=FOCUS_ON_HARD)
+        exercise = get_random_exercise(only_hard=False)
         print_exercise_info(exercise, mode_label)
         
         return str(exercise)

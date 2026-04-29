@@ -21,3 +21,7 @@ C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\dynamic_programming\wo
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\tree\construct-binary-tree-from-preorder-and-inorder-traversal.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\min-cost-to-connect-all-points.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\alien_dictionary.ipynb
+C:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\course_schedule.ipynb
+C:\Users\w515783\Desktop\js\algorithms-python\src\exercices\linked_list\has_cycle_in_linked_list.ipynb
+C:\Users\w515783\Desktop\js\algorithms-python\src\exercices\tree\subtree-of-another-tree.ipynb
+C:\Users\w515783\Desktop\js\algorithms-python\src\exercices\array\two_pointers\climbing_the_leaderboard.ipynb
