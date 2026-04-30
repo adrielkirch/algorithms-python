@@ -1,8 +1,8 @@
 import random
 
-def sortear_desafio():
+def random_exercice():
     # Lista limpa apenas com os nomes dos exercícios
-    exercicios = [
+    exercices = [
         "Queue using Two Stacks",
         "Roads and Libraries",
         "Balanced Brackets",
@@ -42,11 +42,11 @@ def sortear_desafio():
         "Subarray Division"
     ]
 
-    picked = random.choice(exercicios)
+    picked = random.choice(exercices)
     
     print("-" * 40)
     print(f"🚀 next challange: {picked}")
     print("-" * 40)
 
 if __name__ == "__main__":
-    sortear_desafio()
+    random_exercice()
