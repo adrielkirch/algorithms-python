@@ -48,5 +48,6 @@ def random_exercice():
     print(f"🚀 next challange: {picked}")
     print("-" * 40)
 
+555
 if __name__ == "__main__":
     random_exercice()
