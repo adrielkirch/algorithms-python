@@ -27,3 +27,9 @@ C:\Users\w515783\Desktop\js\algorithms-python\src\exercices\tree\subtree-of-anot
 C:\Users\w515783\Desktop\js\algorithms-python\src\exercices\array\two_pointers\climbing_the_leaderboard.ipynb
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\array\hashmap\minimum_distances_found.ipynb
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\roads-and-libraries.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\max-area-islands.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\array\hashmap\socks_pairs.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\strings\is_palindrome.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\slide_windown\the-birthday-choco-bar.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\interval\merge-intervals.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\dynamic_programming\house-robber-2.ipynb
