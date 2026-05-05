@@ -7,3 +7,7 @@ C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\strings\group_anagrams
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\stack\is_valid_parentheses.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\strings\longest_common_suffix.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\word_search.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\slide_windown\permutation_in_string.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\dynamic_programming\word-break-ii.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\slide_windown\minimum_window_substring.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\strings\palindromic-substrings.ipynb
