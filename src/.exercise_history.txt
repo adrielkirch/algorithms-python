@@ -11,3 +11,4 @@ C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\slide_windown\permutat
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\dynamic_programming\word-break-ii.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\slide_windown\minimum_window_substring.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\strings\palindromic-substrings.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\number_of_provinces.ipynb
