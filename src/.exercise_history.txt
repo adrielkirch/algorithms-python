@@ -1,1 +1,4 @@
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\jorney-to-the-moon.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\dynamic_programming\climbing_stairs.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\slide_windown\longest-repeating-character-replacement.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\linked_list\lru-cache.ipynb
