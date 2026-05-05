@@ -12,3 +12,7 @@ C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\dynamic_programming\wo
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\slide_windown\minimum_window_substring.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\strings\palindromic-substrings.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\number_of_provinces.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\min-cost-to-connect-all-points.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\find-path-if-exists.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\tree\find-peak-element.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\dsu-union-find-kruskal.ipynb
