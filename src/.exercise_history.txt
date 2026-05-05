@@ -33,3 +33,4 @@ C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\strings\is_palindrome.
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\slide_windown\the-birthday-choco-bar.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\interval\merge-intervals.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\dynamic_programming\house-robber-2.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\gridland-provinces.ipynb
