@@ -34,3 +34,10 @@ C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\stack\daily-temperatur
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\backtracking\crossword-puzzle.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\array\two_pointers\climbing_the_leaderboard.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\dynamic_programming\word-break.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\tree\even_tree.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\tree\binary_search.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\number-of-connected-components-in-an-undirected-graph.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\expert_cat_mouse.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\backtracking\sudoku-solver.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\interval\meeting-rooms-II.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\stack\create-queue-2-stacks.ipynb
