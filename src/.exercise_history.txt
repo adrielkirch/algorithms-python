@@ -27,3 +27,5 @@ C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\pacific_atlatic_
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\number_of_island-II.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\interval\insert-interval.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\array\greedy\maximum-subarray.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\array\two_pointers\product_nums_list_execept_itself.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\strings\is_anagram.ipynb
