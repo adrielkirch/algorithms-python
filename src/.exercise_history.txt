@@ -29,3 +29,7 @@ C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\interval\insert-interv
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\array\greedy\maximum-subarray.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\array\two_pointers\product_nums_list_execept_itself.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\strings\is_anagram.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\heap\merge_k_sorted_linked_lists.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\stack\daily-temperatures.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\backtracking\crossword-puzzle.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\array\two_pointers\climbing_the_leaderboard.ipynb
