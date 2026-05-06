@@ -16,3 +16,4 @@ C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\min-cost-to-conn
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\find-path-if-exists.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\tree\find-peak-element.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\dsu-union-find-kruskal.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\gridland-provinces.ipynb
