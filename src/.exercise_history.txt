@@ -41,3 +41,8 @@ C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\expert_cat_mouse
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\backtracking\sudoku-solver.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\interval\meeting-rooms-II.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\stack\create-queue-2-stacks.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\dynamic_programming\jump_game_array.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\tree\implement-trie.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\slide_windown\max_sum_in_subarray.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\course_schedule.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\number_of_island.ipynb
