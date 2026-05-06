@@ -17,3 +17,5 @@ C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\find-path-if-exi
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\tree\find-peak-element.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\dsu-union-find-kruskal.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\gridland-provinces.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\slide_windown\longest-substring-without-repeating.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\backtracking\n-queens.ipynb
