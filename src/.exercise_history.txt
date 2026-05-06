@@ -19,3 +19,11 @@ C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\dsu-union-find-k
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\gridland-provinces.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\slide_windown\longest-substring-without-repeating.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\backtracking\n-queens.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\array\hashmap\exists_dup_in_array.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\dynamic_programming\house-robber.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\clone_graph.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\tree\subtree-of-another-tree.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\pacific_atlatic_water_flow.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\graph\number_of_island-II.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\interval\insert-interval.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\array\greedy\maximum-subarray.ipynb
