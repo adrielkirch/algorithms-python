@@ -33,3 +33,4 @@ C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\heap\merge_k_sorted_li
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\stack\daily-temperatures.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\backtracking\crossword-puzzle.ipynb
 C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\array\two_pointers\climbing_the_leaderboard.ipynb
+C:\Users\Micro\Desktop\py\algorithms-python\src\exercices\dynamic_programming\word-break.ipynb
