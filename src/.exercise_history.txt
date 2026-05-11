@@ -50,3 +50,6 @@ C:\Users\w515783\Desktop\js\algorithms-python\src\exercices\heap\last_stone_weig
 C:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\course_schedule_2.ipynb
 C:\Users\w515783\Desktop\js\algorithms-python\src\exercices\strings\longest_common_suffix.ipynb
 C:\Users\w515783\Desktop\js\algorithms-python\src\exercices\strings\group_anagrams.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\dynamic_programming\house-robber-2.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\heap\k_closest_points_to_origin.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\number_of_island-II.ipynb
