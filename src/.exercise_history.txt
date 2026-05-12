@@ -77,3 +77,7 @@ c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\stack\is_valid_paren
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\stack\create-queue-2-stacks.ipynb
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\number-of-connected-components-in-an-undirected-graph.ipynb
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\array\two_pointers\climbing_the_leaderboard.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\array\hashmap\beautiful_triplets.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\linked_list\remove_n_node_from_end_list.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\expert_cat_mouse.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\linked_list\reorder_linked_list.ipynb
