@@ -81,3 +81,15 @@ c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\array\hashmap\beauti
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\linked_list\remove_n_node_from_end_list.ipynb
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\expert_cat_mouse.ipynb
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\linked_list\reorder_linked_list.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\find_closest_same_color.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\tree\binary_max_sum.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\heap\kth_largest_element_in_array.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\course_schedule.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\array\two_pointers\picking_numbers.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\linked_list\has_cycle_in_linked_list.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\dynamic_programming\word-break-ii.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\number_of_provinces.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\tree\binary_search.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\heap\merge_k_sorted_linked_lists.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\word_search_2.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\backtracking\n-queens.ipynb
