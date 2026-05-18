@@ -93,3 +93,6 @@ c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\tree\binary_search.i
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\heap\merge_k_sorted_linked_lists.ipynb
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\word_search_2.ipynb
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\backtracking\n-queens.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\min-cost-connect-cities.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\slide_windown\longest-substring-without-repeating.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\array\hashmap\3sum.ipynb
