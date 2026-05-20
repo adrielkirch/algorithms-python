@@ -2475,9 +2475,11 @@ print("✓ LIS Passed")
 ```
 
 **CÓDIGO O(n log n) com Binary Search:**
+
+**Version 1: Using bisect (Recommended - Pythonic)**
 ```python
 def lengthOfLIS_fast(nums: List[int]) -> int:
-    """LIS com Binary Search."""
+    """LIS com Binary Search (using bisect)."""
     import bisect
     tails = []
     
@@ -2491,8 +2493,46 @@ def lengthOfLIS_fast(nums: List[int]) -> int:
     return len(tails)
 
 assert lengthOfLIS_fast([10,9,2,5,3,7,101,18]) == 4
-print("✓ LIS (Fast) Passed")
+print("✓ LIS (Bisect) Passed")
 ```
+
+**Version 2: Pure Binary Search (Educational)**
+```python
+def lengthOfLIS_pure(nums: List[int]) -> int:
+    """LIS com Pure Binary Search (manual implementation)."""
+    tails = []
+    
+    def binary_search(arr, target):
+        """Find leftmost position where target should be inserted."""
+        left, right = 0, len(arr)
+        while left < right:
+            mid = (left + right) // 2
+            if arr[mid] < target:
+                left = mid + 1
+            else:
+                right = mid
+        return left
+    
+    for num in nums:
+        pos = binary_search(tails, num)
+        if pos == len(tails):
+            tails.append(num)
+        else:
+            tails[pos] = num
+    
+    return len(tails)
+
+assert lengthOfLIS_pure([10,9,2,5,3,7,101,18]) == 4
+print("✓ LIS (Pure) Passed")
+```
+
+**Comparison:**
+| Aspect | bisect | Pure Binary Search |
+|--------|--------|-------------------|
+| **Time** | O(n log n) | O(n log n) |
+| **Space** | O(n) | O(n) |
+| **Pythonic** | ✓ Recommended | Educational |
+| **Production** | Use this | Use for interviews if asked |
 
 ---
 
