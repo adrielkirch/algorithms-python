@@ -99,3 +99,11 @@ c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\array\hashmap\3sum.i
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\rotting-oranges.ipynb
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\tree\contact_search_trie.ipynb
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\tree\max_depth_of_binary_tree.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\dynamic_programming\min_coin_combinations.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\strings\is_palindrome.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\course_schedule_2.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\array\greedy\maximum-subarray.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\array\hashmap\most_frequent_migratory_bird.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\tree\rotation_array.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\max-area-islands.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\slide_windown\minimum_window_substring.ipynb
