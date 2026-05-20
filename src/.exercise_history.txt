@@ -107,3 +107,10 @@ c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\array\hashmap\most_f
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\tree\rotation_array.ipynb
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\max-area-islands.ipynb
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\slide_windown\minimum_window_substring.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\array\hashmap\remove_dup_in_array.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\slide_windown\the-birthday-choco-bar.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\graph-valid-tree.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\backtracking\sudoku-solver.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\min-cost-to-connect-all-points.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\array\hashmap\is_alien_dict.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\linked_list\lru-cache.ipynb
