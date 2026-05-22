@@ -1,0 +1,2223 @@
+
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAANG Master Guide - Pattern Recognition</title>
+        <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                line-height: 1.7;
+                color: #1f2937;
+                background: white;
+                padding: 40px 20px;
+            }
+
+            .container {
+                max-width: 950px;
+                margin: 0 auto;
+            }
+
+            h1 {
+                font-size: 2.5em;
+                color: white;
+                background: linear-gradient(135deg, #2563eb, #1e40af);
+                padding: 50px 40px;
+                margin: -40px -20px 40px -20px;
+                border-radius: 0;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            h2 {
+                font-size: 1.8em;
+                color: #2563eb;
+                margin: 50px 0 20px;
+                border-bottom: 3px solid #2563eb;
+                padding-bottom: 15px;
+                page-break-after: avoid;
+            }
+
+            h3 {
+                font-size: 1.4em;
+                color: #1e40af;
+                margin: 30px 0 15px;
+                page-break-after: avoid;
+            }
+
+            h4 {
+                font-size: 1.1em;
+                color: #1f2937;
+                margin: 20px 0 10px;
+            }
+
+            p {
+                margin: 15px 0;
+                text-align: justify;
+                font-size: 15px;
+            }
+
+            code {
+                background-color: #f8f9fa;
+                color: #1e40af;
+                padding: 3px 8px;
+                border-radius: 4px;
+                font-family: 'Courier New', monospace;
+                font-size: 13px;
+                font-weight: 500;
+            }
+
+            pre {
+                background-color: #1e293b;
+                color: #e2e8f0;
+                padding: 20px;
+                border-radius: 8px;
+                overflow-x: auto;
+                font-family: 'Courier New', monospace;
+                font-size: 12px;
+                line-height: 1.6;
+                margin: 25px 0;
+                border-left: 4px solid #059669;
+                page-break-inside: avoid;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            pre code {
+                background: none;
+                color: inherit;
+                padding: 0;
+                border-radius: 0;
+                font-size: 12px;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin: 25px 0;
+                page-break-inside: avoid;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            table th, table td {
+                border: 1px solid #e5e7eb;
+                padding: 14px;
+                text-align: left;
+                font-size: 14px;
+            }
+
+            table th {
+                background-color: #f8f9fa;
+                color: #1f2937;
+                font-weight: 600;
+                border-bottom: 2px solid #2563eb;
+            }
+
+            table tr:hover {
+                background-color: #f8f9fa;
+            }
+
+            ul, ol {
+                margin: 15px 0 15px 30px;
+            }
+
+            li {
+                margin: 8px 0;
+                font-size: 15px;
+            }
+
+            blockquote {
+                border-left: 4px solid #059669;
+                padding: 15px 20px;
+                margin: 20px 0;
+                background-color: #f8f9fa;
+                border-radius: 4px;
+                color: #1f2937;
+                font-style: italic;
+            }
+
+            hr {
+                margin: 40px 0;
+                border: none;
+                border-top: 2px solid #e5e7eb;
+            }
+
+            @media print {
+                body { background: white; padding: 0; }
+                h1 { margin: 0 0 30px 0; page-break-after: avoid; }
+                pre { page-break-inside: avoid; }
+                table { page-break-inside: avoid; }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+    <h1>🎯 FAANG Master Guide: SPEC → PLAN → TASKS</h1>
+<p><strong>Objetivo:</strong> Não memorizar soluções. Entender como <strong>reconhecer padrões</strong> e <strong>escolher a melhor abordagem</strong> para cada problema.</p>
+<hr>
+<h2>📋 Framework SPEC → PLAN → TASKS</h2>
+<pre><code>┌─────────────────────────────────────────────────────────┐
+│ SPEC: O QUÊ? (Definir o problema)                      │
+│ • Contrato Input/Output                                 │
+│ • Edge cases e restrições                               │
+│ • Propriedades matemáticas (monotonicidade?)            │
+│ • Força bruta naive (sempre comece aqui!)               │
+└─────────────────────────────────────────────────────────┘
+                          ↓
+┌─────────────────────────────────────────────────────────┐
+│ PLAN: COMO? (Escolher a técnica)                        │
+│ • Reconhecer padrão (BFS? DP? Greedy? Binary Search?)   │
+│ • Comparar trade-offs (Time vs Space vs Legibilidade)   │
+│ • Justificar escolha (por quê THIS padrão?)             │
+│ • Pseudocódigo e diagrama                               │
+└─────────────────────────────────────────────────────────┘
+                          ↓
+┌─────────────────────────────────────────────────────────┐
+│ TASKS: CÓDIGO (Implementar + Validar)                   │
+│ • Código limpo e comentado                              │
+│ • Testes (edge cases, casos normais ...)            │
+│ • Análise de complexidade (Time + Space)                │
+│ • Débug (printf-debugging, trace mental)                │
+└─────────────────────────────────────────────────────────┘</code></pre>
+<hr>
+<h2>🔍 SPEC: Checklist Detalhado</h2>
+<h3>1️⃣ **Contrato Input/Output**</h3>
+<h3>2️⃣ **Edge Cases Críticos**</h3>
+<p>Sempre teste esses casos:</p>
+<pre><code># Tamanho
+[], [1], [1, 2]           # Vazio, singleton, pair
+
+# Valores duplicados
+[1, 1, 1], [1, 2, 1]     # Todos iguais, repetições
+
+# Extremos
+[-10^9, 0, 10^9]         # Min, zero, max
+
+# Casos especiais do domínio
+# Strings: "", strings com espaços, caracteres especiais
+# Arrays: Arrays já ordenados, inversamente ordenados
+# Grafos: Grafo desconexo, nó isolado, ciclos</code></pre>
+<h3>3️⃣ **Propriedades Matemáticas**</h3>
+<p>Pergunta-chave: <strong>Qual propriedade do problema ajuda a resolver?</strong></p>
+<hr>
+<h2>🎓 PLAN: Matriz de Trade-offs</h2>
+<h3>Quando usar cada técnica?</h3>
+<pre><code>┌─────────────────────────┬──────────┬──────────┬──────────────────┐
+│ Técnica                 │ Time     │ Space    │ Quando usar      │
+├─────────────────────────┼──────────┼──────────┼──────────────────┤
+│ FORCE BRUTE             │ O(n!)    │ O(1)     │ Sempre comece    │
+│ (tenta tudo)            │ O(2^n)   │          │ aqui! n &lt; 20     │
+├─────────────────────────┼──────────┼──────────┼──────────────────┤
+│ BACKTRACKING + PRUNING  │ O(n!)    │ O(n)     │ Combinações,     │
+│ (força bruta smart)     │ O(2^n)   │ recursão │ Permutações,     │
+│                         │ (melhor) │ stack    │ Sudoku           │
+├─────────────────────────┼──────────┼──────────┼──────────────────┤
+│ DYNAMIC PROGRAMMING     │ O(n²)    │ O(n²)    │ Subestrutura     │
+│ (memoization/tabulation)│ O(n³)    │ O(n)     │ ótima, repetição │
+│                         │ (dep)    │ (rolling)│ de subproblemas  │
+├─────────────────────────┼──────────┼──────────┼──────────────────┤
+│ DFS (graph/tree)        │ O(V+E)   │ O(V)     │ Explorar         │
+│                         │ ou O(n)  │ recursão │ profundidade,    │
+│                         │          │ stack    │ Connected comps  │
+├─────────────────────────┼──────────┼──────────┼──────────────────┤
+│ BFS (graph/tree)        │ O(V+E)   │ O(V)     │ Menor caminho,   │
+│                         │ ou O(n)  │ queue    │ Nível a nível    │
+├─────────────────────────┼──────────┼──────────┼──────────────────┤
+| BINARY SEARCH           │ O(log n) │ O(1)     │ Função monotônica |
+│ (on answer/value)       │          │          │ (não é sobre      |
+│                         │          │          │ ordenação!)       |
+├─────────────────────────┼──────────┼──────────┼──────────────────┤
+│ GREEDY                  │ O(n)     │ O(1)     │ Greedy choice    │
+│                         │ O(n log n)│ O(n)    │ provável ótima   │
+│                         │          │ (sort)   │                  │
+├─────────────────────────┼──────────┼──────────┼──────────────────┤
+│ SLIDING WINDOW          │ O(n)     │ O(k)     │ Subarrays/       │
+│                         │          │ (hash)   │ substrings       │
+├─────────────────────────┼──────────┼──────────┼──────────────────┤
+│ HASH MAP / SET          │ O(n) avg │ O(n)     │ Lookup rápido,   │
+│                         │ O(n²) bad│          │ Frequência       │
+├─────────────────────────┼──────────┼──────────┼──────────────────┤
+│ HEAP / PRIORITY QUEUE   │ O(n log n)│ O(n)   │ Top K, Mediana   │
+│                         │          │          │ Merge K          │
+├─────────────────────────┼──────────┼──────────┼──────────────────┤
+│ MONOTONIC STACK         │ O(n)     │ O(n)     │ Próximo elemento │
+│ (Deque/Stack simples)   │          │ stack    │ MAIOR/MENOR,     │
+│                         │          │          │ Daily Temps      │
+└─────────────────────────┴──────────┴──────────┴──────────────────┘</code></pre>
+<h3>Exemplos de Trade-offs</h3>
+<h4>✅ **Problema: Find Minimum in Rotated Sorted Array**</h4>
+<p><strong>Conclusão:</strong> Use Binary Search porque o array é sorted → monotonicidade.</p>
+<hr>
+<h4>✅ **Problema: N-Queens**</h4>
+<p><strong>Conclusão:</strong> Use Backtracking porque precisamos explorar TODAS as combinações + poder fazer pruning.</p>
+<hr>
+<h4>✅ **Problema: Coin Change (mínimo moedas para valor X)**</h4>
+<p><strong>Conclusão:</strong> Use DP porque temos subestrutura ótima + repetição de subproblemas.</p>
+<hr>
+<h2>🚀 Decision Tree: Como Escolher?</h2>
+<pre><code>NOVO PROBLEMA
+     ↓
+[1] É um problema de GRAFO/ÁRVORE?
+     YES → BFS (shortest path) ou DFS (conectividade)?
+           → Topological sort? → Dijkstra?
+     NO → [2]
+     
+[2] Preciso ENCONTRAR TODAS as soluções (combinações/permutações)?
+     YES → BACKTRACKING + PRUNING (N-Queens, Sudoku)
+     NO → [3]
+     
+[3] É um problema de OTIMIZAÇÃO (min/max)?
+     YES → [4a]
+     NO → [5]
+     
+[4a] A função objetivo é MONOTÔNICA?
+      YES → BINARY SEARCH ON ANSWER (Koko Bananas)
+           ⚠️ IMPORTANTE: Monotonicidade de FUNÇÃO (curva sempre sobe/desce)
+                         NÃO confundir com MONOTONIC STACK (estrutura de dados)!
+                         
+                         Monotonic Stack é para problemas como:
+                         - Nearest Greater/Smaller Element
+                         - Daily Temperatures
+                         - Trapping Rain Water
+                         
+                         Use Monotonic Stack quando precisa encontrar padrões
+                         de vizinhança em arrays (não é otimização com busca)
+      
+      NO → [4b]
+      
+[4b] Tem SUBESTRUTURA ÓTIMA (solução ótima = opt(subproblemas))?
+      YES → DYNAMIC PROGRAMMING (Coin Change, LIS, House Robber)
+      NO → GREEDY (Jump Game, Interval Scheduling)
+           ⚠️ Greedy nem sempre funciona! Prove ou valide com testes.
+           
+[5] É um SUBSTRING/SUBARRAY problem?
+     YES → SLIDING WINDOW (Fixed/Variable size)
+           ou TWO POINTERS (contraste entre elementos)
+     NO → [6]
+     
+[6] Frequência, rank, top K?
+     YES → HEAP / HASH MAP (K Frequent, Kth Largest)
+     NO → [7]
+     
+[7] Array/String simples?
+     YES → TWO POINTERS, SORT + GREEDY, ou HASH MAP
+     NO → Check outras propriedades (linked list? matrix?)</code></pre>
+<hr>
+<h2>🎯 Padrões de Reconhecimento</h2>
+<h3>1. **Quando reconhecer DP?**</h3>
+<pre><code>GATILHOS DP:
+✅ "mínimo", "máximo" (otimização)
+✅ "contar", "número de formas" (combinatória)
+✅ "é possível?", "viável?" (decisão)
+✅ Overlapping subproblems (fibonacci, coin change)
+✅ Subestrutura ótima (a resposta usa respostas menores)
+
+Frases que triggerem DP:
+- "Minimum steps to..."
+- "Maximum product of..."
+- "Number of ways to..."
+- "Can we achieve...?"
+- "Is it possible...?"</code></pre>
+<p><strong>Exemplo:</strong> "Mínimo número de moedas para fazer X"</p>
+<p>→ Subestrutura: <code>min_coins(X) = 1 + min(min_coins(X - coin) for each coin)</code></p>
+<hr>
+<h3>2. **Quando reconhecer Backtracking?**</h3>
+<pre><code>GATILHOS BACKTRACKING:
+✅ "todas as combinações" / "todas as permutações"
+✅ "encontrar todas as soluções"
+✅ "escolher/descartar elementos"
+✅ Decisões independentes em cada nível
+
+Frases que triggerem Backtracking:
+- "Find ALL combinations/permutations"
+- "Generate all valid..."
+- "Solve the puzzle" (Sudoku, N-Queens)
+- "All possible ways to..."</code></pre>
+<p><strong>Exemplo:</strong> "Todas as permutações de uma string"</p>
+<p>→ Escolha: cada posição pode ter qualquer caractere ainda não usado.</p>
+<hr>
+<h3>2️⃣ **O que é Monotonicidade? (Conceito Essencial)**</h3>
+<p>Monotonicidade é a propriedade de uma <strong>FUNÇÃO</strong>, não dos dados!</p>
+<h4>📐 Definição Matemática</h4>
+<pre><code>Função MONOTÔNICA (crescente ou decrescente) significa que:
+
+CRESCENTE MONÓTONA:
+  Se x₁ &lt; x₂, então f(x₁) ≤ f(x₂) (ou &lt; para estritamente crescente)
+  Exemplo: f(x) = x, f(x) = 2x + 1, f(x) = √x
+  
+DECRESCENTE MONÓTONA:
+  Se x₁ &lt; x₂, então f(x₁) ≥ f(x₂) (ou &gt; para estritamente decrescente)
+  Exemplo: f(x) = -x, f(x) = 1/x, f(x) = -2x + 5</code></pre>
+<h4>🎯 Regra Simples</h4>
+<pre><code>✅ MONOTÔNICA: Sempre vai na MESMA DIREÇÃO
+   • Sempre cresce: f(1) &lt; f(2) &lt; f(3) &lt; f(4) ...
+   • Sempre decresce: f(1) &gt; f(2) &gt; f(3) &gt; f(4) ...
+   • Nunca muda de direção!
+
+❌ NÃO MONOTÔNICA: Muda de direção
+   • Cresce e depois decresce: f(1) &lt; f(2) &lt; f(3) &gt; f(4) ❌
+   • Decresce e depois cresce: f(1) &gt; f(2) &gt; f(3) &lt; f(4) ❌</code></pre>
+<h4>🔍 Exemplos Visuais</h4>
+<pre><code>CRESCENTE MONÓTONA (f(x) = x²):
+y
+  |                  ●  
+  |              ●
+  |          ●
+  |      ●
+  |  ●
+  └─────────────→ x
+  
+  Padrão: Sempre SOBE (ou fica igual)
+  Logo: f(1) &lt; f(2) &lt; f(3) &lt; f(4)
+
+───────────────────────────────────
+
+DECRESCENTE MONÓTONA (f(x) = -x):
+y
+  |  ●
+  |      ●
+  |          ●
+  |              ●
+  |                  ●
+  └─────────────→ x
+  
+  Padrão: Sempre DESCE (ou fica igual)
+  Logo: f(1) &gt; f(2) &gt; f(3) &gt; f(4)
+
+───────────────────────────────────
+
+NÃO MONOTÔNICA (f(x) = x² - 4x):
+y
+  |  ●
+  |      ●
+  |          ●
+  |      ●
+  |  ●
+  └─────────────→ x
+  
+  Padrão: Desce, depois SOBE
+  Logo: ❌ NÃO é monotônica! (muda de direção)</code></pre>
+<h4>💡 Aplicação: Por que Binary Search precisa de Monotonicidade?</h4>
+<pre><code>PROBLEMA: Procurar um valor em um espaço grande [1, 10^9]
+
+Com MONOTONICIDADE (f sempre cresce ou sempre decresce):
+  Se estou no meio e f(mid) &gt; target:
+    → Posso ignorar METADE do espaço com segurança!
+    → Porque sei que não vai mudar de direção
+  
+  Logo: O(log n) é garantido! ✅
+
+Sem MONOTONICIDADE (f sobe e desce):
+  Se estou no meio e f(mid) &gt; target:
+    → Não sei se ignorar esquerda ou direita!
+    → A resposta pode estar em QUALQUER LUGAR
+  
+  Logo: Preciso de força bruta O(n) ❌</code></pre>
+<h4>🔗 Exemplo: Koko Eating Bananas (MONOTÔNICA DECRESCENTE)</h4>
+<pre><code>Pilhas: [3, 6, 7, 11]
+Horas disponíveis: 8
+
+Função: hours_needed(k) = sum(ceil(pile / k))
+
+Valores:
+  k=1  → hours_needed(1)  = 4 + 6 + 7 + 11 = 28
+  k=2  → hours_needed(2)  = 2 + 3 + 4 + 6  = 15
+  k=3  → hours_needed(3)  = 2 + 2 + 3 + 4  = 11
+  k=4  → hours_needed(4)  = 1 + 2 + 2 + 3  = 8  ← resposta!
+  k=5  → hours_needed(5)  = 1 + 2 + 2 + 3  = 8
+  k=6  → hours_needed(6)  = 1 + 1 + 2 + 2  = 6
+  k=7  → hours_needed(7)  = 1 + 1 + 1 + 2  = 5
+
+Propriedade: 28 &gt; 15 &gt; 11 &gt; 8 ≥ 8 &gt; 6 &gt; 5
+             SEMPRE DECRESCENTE (ou igual)
+             
+✅ É MONOTÔNICA! Logo Binary Search funciona.</code></pre>
+<h4>❌ Contraexemplo: NÃO MONOTÔNICA</h4>
+<pre><code>Função: f(x) = x² - 8x + 12 (parábola)
+
+Valores:
+  x=0 → f(0) = 12
+  x=1 → f(1) = 5
+  x=2 → f(2) = 0
+  x=3 → f(3) = -3
+  x=4 → f(4) = -4  ← mínimo
+  x=5 → f(5) = -3
+  x=6 → f(6) = 0
+  x=7 → f(7) = 5
+
+Propriedade: 12 &gt; 5 &gt; 0 &gt; -3 &gt; -4 &lt; -3 &lt; 0 &lt; 5
+             Desce depois SOBE!
+             
+❌ NÃO é MONOTÔNICA! Binary Search NÃO funciona diretamente.
+   (Precisaria de técnica especial para encontrar o mínimo)</code></pre>
+<hr>
+<h3>3. **Quando reconhecer Binary Search?**</h3>
+<pre><code>GATILHOS BINARY SEARCH:
+✅ Função é MONOTÔNICA: f(x) = [F, F, ..., F, T, T, ..., T] ou [T, T, ..., T, F, F]
+✅ "Mínimo X tal que..." ou "Máximo X tal que..."
+✅ Array sorted OU espaço de busca bem definido
+✅ Constraints: n até 10^18 (log n é viável, linear não)
+
+⚠️ IMPORTANTE: Monotonicidade NÃO é ordenação!
+   • Monotonicidade = propriedade da FUNÇÃO (input ↑ → output ↑ ou ↓)
+   • Ordenação = estado dos DADOS (array em ordem crescente)
+   • Exemplo Koko: [3,6,7,11] NÃO é sorted, mas horas_needed(k) é monotônica
+
+Frases que triggerem Binary Search:
+- "Minimum/Maximum [X] such that [condition]"
+- "Can we do it in [X] time/capacity?"
+- "First/Last position of..."</code></pre>
+<p><strong>Exemplo:</strong> "Mínimo velocidade para comer todas as bananas" (Koko)</p>
+<p>→ Monotonicidade: se velocidade V funciona, V+1 também funciona.</p>
+<hr>
+<h3>4️⃣ **Quando reconhecer Monotonic Stack? (NÃO confundir com Binary Search!)**</h3>
+<pre><code>⚠️ ALERTA CONFUSÃO:
+   Muitas pessoas confundem "Monotônica" (Binary Search) 
+   com "Monotonic Stack" (estrutura de dados)
+   
+   SÃO COISAS COMPLETAMENTE DIFERENTES!</code></pre>
+<h4>Monotonic Stack: O que é?</h4>
+<pre><code>Monotonic Stack é uma ESTRUTURA DE DADOS (não é uma propriedade de função!)
+Mantém elementos em ordem CRESCENTE ou DECRESCENTE
+Usando: Deque ou Stack com pop() estratégico
+
+Exemplo:
+  Input:  [73, 74, 75, 71, 69, 72, 76, 73]
+  Problema: Daily Temperatures - próxima temperatura MAIOR
+  
+  Stack (monotonic decreasing):
+    [73]           → Stack vazio, push
+    [73, 74]       → 74 &gt; 73, pop 73, encontra resposta! push 74
+    [73, 74, 75]   → 75 &gt; 74, pop 74, push 75
+    [73, 74, 75, 71] → 71 &lt; 75, push (sem pop)
+    ...</code></pre>
+<h4>GATILHOS Monotonic Stack:</h4>
+<pre><code>✅ "Próximo elemento MAIOR/MENOR"
+✅ "Elemento anterior MAIOR/MENOR"
+✅ "Número de dias até temperatura maior"
+✅ "Elemento com maior valor à direita/esquerda"
+✅ "Remover k dígitos para fazer número menor"
+✅ "Largest Rectangle in Histogram"
+✅ "Trapping Rain Water"
+
+Padrão: Precisa encontrar padrões de vizinhança/relação entre elementos
+        Não é otimização com busca (então NÃO é Binary Search)
+        
+Complexidade: O(n) - cada elemento entra/sai da stack UMA VEZ</code></pre>
+<h4>Comparação: Monotônica vs Monotonic Stack</h4>
+<pre><code>┌──────────────────────────────┬──────────────────────┬──────────────────────┐
+│ Aspecto                      │ MONOTÔNICA (Binary)  │ MONOTONIC STACK      │
+├──────────────────────────────┼──────────────────────┼──────────────────────┤
+│ O que é                      │ Propriedade de função│ Estrutura de dados   │
+│ Pergunta típica              │ "Mínimo X tal que"   │ "Próximo X MAIOR"    │
+│ Estrutura                    │ Espaço de busca      │ Stack/Deque          │
+│ Algoritmo                    │ Binary Search        │ Linear scan com pop()│
+│ Complexidade                 │ O(log n) + O(n)      │ O(n)                 │
+│ Exemplo                      │ Koko Bananas         │ Daily Temperatures   │
+│ Usa comparação mid com cond? │ SIM                  │ NÃO                  │
+│ Precisa manter ordem?        │ NÃO (função vale)    │ SIM (stack ordem)    │
+└──────────────────────────────┴──────────────────────┴──────────────────────┘</code></pre>
+<h4>Exemplo: Monotonic Stack</h4>
+<pre><code># Daily Temperatures: [73, 74, 75, 71, 69, 72, 76, 73]
+# Output: Dias até próxima temperatura MAIOR
+
+def dailyTemperatures(temps):
+    result = [0] * len(temps)
+    stack = []  # Vai guardar ÍNDICES, mantendo temperaturas em ordem DECRESCENTE
+    
+    for i, temp in enumerate(temps):
+        # Enquanto stack não vazio E temperatura atual &gt; topo do stack
+        while stack and temp &gt; temps[stack[-1]]:
+            j = stack.pop()
+            result[j] = i - j  # Encontrou! A diferença é a resposta
+        
+        stack.append(i)
+    
+    return result
+
+# Trace:
+# temps = [73, 74, 75, 71, 69, 72, 76, 73]
+# 
+# i=0, temp=73: stack=[] → push(0) → stack=[0]
+# i=1, temp=74: 74 &gt; 73? SIM! pop(0), result[0]=1-0=1, push(1) → stack=[1]
+# i=2, temp=75: 75 &gt; 74? SIM! pop(1), result[1]=2-1=1, push(2) → stack=[2]
+# i=3, temp=71: 71 &gt; 75? NÃO → push(3) → stack=[2,3]
+# i=4, temp=69: 69 &gt; 71? NÃO → push(4) → stack=[2,3,4]
+# i=5, temp=72: 72 &gt; 69? SIM! pop(4), result[4]=5-4=1
+#               72 &gt; 71? SIM! pop(3), result[3]=5-3=2
+#               72 &gt; 75? NÃO → push(5) → stack=[2,5]
+# i=6, temp=76: 76 &gt; 72? SIM! pop(5), result[5]=6-5=1
+#               76 &gt; 75? SIM! pop(2), result[2]=6-2=4, push(6) → stack=[6]
+# i=7, temp=73: 73 &gt; 76? NÃO → push(7) → stack=[6,7]
+#
+# result = [1, 1, 4, 2, 1, 1, 0, 0]</code></pre>
+<hr>
+<h3>5. **Quando reconhecer Greedy?**</h3>
+<pre><code>GATILHOS GREEDY:
+✅ Problema de otimização (min/max)
+✅ Escolha LOCAL ótima leva a ótimo GLOBAL
+✅ Não há subestrutura ótima ou é óbvio
+
+AVISO: Greedy nem sempre funciona!
+❌ Coin Change com [1, 3, 4] e valor 6:
+   Greedy: 4 + 1 + 1 = 3 moedas ❌
+   Ótima: 3 + 3 = 2 moedas ✅
+
+Validação Greedy:
+1. Prove que escolha local é ótima (prova matemática)
+2. OU teste exaustivamente com pequenos exemplos
+3. OU use DP se não tiver certeza</code></pre>
+<hr>
+<h2>📊 Exemplos do Repositório</h2>
+<h3>Jump Game (Greedy)</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>nums: List[int]</code> (alcance máximo de cada posição)</li>
+<li>Output: <code>bool</code> (consegue chegar ao final?)</li>
+<li>Edge: <code>[]</code>, <code>[0]</code>, <code>[2,3,1,1,4]</code></li>
+<li>Propriedade: Subestrutura ótima? SIM (pode alcançar i ⟺ pode alcançar j < i e j+nums[j] >= i)</li>
+<p><strong>PLAN:</strong></p>
+<li>Força bruta: DFS all paths → O(2^n) ❌</li>
+<li>DP: <code>dp[i] = True se conseguir alcançar i</code>  → O(n²) ✅</li>
+<li>Greedy: <code>max_reach</code> track → O(n) ✅✅ <strong>MELHOR</strong></li>
+<p><strong>CÓDIGO:</strong></p>
+<pre><code>def canJump(nums: List[int]) -&gt; bool:
+    """Greedy: acompanha máximo alcance."""
+    max_reach = 0
+    for i in range(len(nums)):
+        if i &gt; max_reach:
+            return False  # Não consegue alcançar posição i
+        max_reach = max(max_reach, i + nums[i])
+    return True
+
+# Tests
+assert canJump([2, 3, 1, 1, 4]) == True   # Consegue
+assert canJump([3, 2, 1, 0, 4]) == False  # Cai no 0
+assert canJump([0]) == True               # Já no final
+assert canJump([2, 0, 0]) == True         # Pode alcançar
+print("✓ Jump Game I Passed")</code></pre>
+<p>Escolha: <strong>Greedy</strong> porque propriedade especial: monotonicidade no alcance.</p>
+<hr>
+<h3>Jump Game II (BFS - Nível a Nível)</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>nums: List[int]</code> (alcance máximo de cada posição)</li>
+<li>Output: <code>int</code> (número MÍNIMO de jumps para chegar ao final)</li>
+<li>Restrição: Sempre consegue chegar (dados garantem)</li>
+<li>Propriedade: <strong>Níveis</strong> (cada jump é 1 nível)</li>
+<p><strong>PLAN:</strong></p>
+<li>Força bruta: DFS explorando todos os jumps → O(2^n) ❌</li>
+<li>DP: <code>dp[i] = min jumps para alcançar i</code> → O(n²) ✅</li>
+<li>BFS: Processa nível a nível, contabiliza jumps → O(n) ✅✅ <strong>MELHOR</strong></li>
+<p><strong>Intuição BFS:</strong></p>
+<pre><code>Cada iteração processa 1 nível de BFS
+Quando termina de processar um nível, jumps += 1</code></pre>
+<p><strong>CÓDIGO:</strong></p>
+<pre><code>def jump(nums: List[int]) -&gt; int:
+    """BFS nível a nível: cada nível = 1 jump."""
+    jumps = 0
+    current_end = 0      # Fim do nível atual
+    farthest = 0         # Máximo alcançado
+    
+    for i in range(len(nums) - 1):  # Não precisa processar último
+        farthest = max(farthest, i + nums[i])
+        
+        # Terminou este nível? (i == current_end)
+        if i == current_end:
+            jumps += 1
+            current_end = farthest
+    
+    return jumps
+
+# Tests
+assert jump([2, 3, 1, 1, 4]) == 2     # [0,1,4] = 2 jumps
+assert jump([2, 3, 0, 1, 4]) == 2     # [0,1,4] = 2 jumps  
+assert jump([1, 1, 1, 0]) == 3        # [0,1,2,3] = 3 jumps
+assert jump([10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 0]) == 2  # [0, ...] = 2
+print("✓ Jump Game II Passed")</code></pre>
+<p><strong>Trade-off:</strong></p>
+<li>DP O(n²) é correto mas redundo</li>
+<li>BFS O(n) é natural: simula os jumps como níveis do grafo</li>
+<hr>
+<h3>Jump Game III (DFS/BFS com Ciclos)</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>arr: List[int]</code> (array), <code>start: int</code> (posição inicial)</li>
+<li>Output: <code>bool</code> (consegue alcançar 0?)</li>
+<li>Restrição: <strong>Pode pular PARA FRENTE E PARA TRÁS</strong> (pode ter ciclos!)</li>
+<li>Edge: <code>[4,2,3,0,3,1,2]</code>, start=5</li>
+<p><strong>PLAN:</strong></p>
+<li>DFS sem visited: Ciclo infinito! ❌</li>
+<li>DFS com visited: Marca visitados, evita ciclos → O(n) ✅✅ <strong>MELHOR</strong></li>
+<li>BFS com visited: Similar, também funciona</li>
+<p><strong>CÓDIGO - DFS Version:</strong></p>
+<pre><code>def canReach(arr: List[int], start: int) -&gt; bool:
+    """DFS com visited set: evita ciclos infinitos."""
+    visited = set()
+    
+    def dfs(i):
+        # Validação
+        if i &lt; 0 or i &gt;= len(arr) or i in visited:
+            return False
+        
+        # Chegou no 0!
+        if arr[i] == 0:
+            return True
+        
+        # Marca como visitado (ANTES de explorar filhos)
+        visited.add(i)
+        
+        # Pode pular FRENTE E TRÁS
+        return dfs(i + arr[i]) or dfs(i - arr[i])
+    
+    return dfs(start)
+
+# Tests
+assert canReach([4, 2, 3, 0, 3, 1, 2], 5) == True   # 5→1→4→3→0
+assert canReach([3, 0, 2, 1, 2], 2) == False        # Não consegue
+assert canReach([0], 0) == True                      # Já no 0
+assert canReach([1, 0], 1) == True                   # 1→0
+print("✓ Jump Game III (DFS) Passed")</code></pre>
+<p><strong>CÓDIGO - BFS Version:</strong></p>
+<pre><code>from collections import deque
+
+def canReach_BFS(arr: List[int], start: int) -&gt; bool:
+    """BFS com visited set: nível a nível."""
+    visited = set([start])
+    queue = deque([start])
+    
+    while queue:
+        i = queue.popleft()
+        
+        if arr[i] == 0:
+            return True
+        
+        # Explore vizinhos (frente e trás)
+        for next_i in [i + arr[i], i - arr[i]]:
+            if 0 &lt;= next_i &lt; len(arr) and next_i not in visited:
+                visited.add(next_i)
+                queue.append(next_i)
+    
+    return False
+
+# Tests (mesmos)
+assert canReach_BFS([4, 2, 3, 0, 3, 1, 2], 5) == True
+print("✓ Jump Game III (BFS) Passed")</code></pre>
+<p><strong>Comparação Jump Game I/II/III:</strong></p>
+<hr>
+<h3>Koko Eating Bananas (Binary Search)</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>piles: List[int]</code>, <code>h: int</code></li>
+<li>Output: <code>int</code> (mínimo velocidade)</li>
+<li>Propriedade: <strong>Monotonicidade</strong> ✅ (se k funciona, k+1 funciona)</li>
+<p><strong>PLAN:</strong></p>
+<li>Search space: <code>[1, max(piles)]</code></li>
+<li>Binary Search encontra primeiro k onde <code>hours_needed(k) <= h</code></li>
+<p><strong>Trade-off:</strong></p>
+<li>Brute force: <code>for k in range(1, max(piles))</code> → O(n · max) ❌</li>
+<li>Binary search → O(n · log(max)) ✅✅ <strong>MELHOR</strong></li>
+<p><strong>⚠️ IMPORTANTE: Leia a seção "TASKS" abaixo para entender COMPLETAMENTE!</strong></p>
+<hr>
+<h3>N-Queens (Backtracking)</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>n: int</code> (tamanho do tabuleiro)</li>
+<li>Output: <code>List[List[str]]</code> (todas as soluções)</li>
+<li>Precisa: TODAS as soluções ✅</li>
+<p><strong>PLAN:</strong></p>
+<li>Força bruta: Tentar todas as colocações de N rainhas → O(N!) ❌ (sem pruning)</li>
+<li>Backtracking: Prunar posições inválidas → O(N!) ✅✅ (com pruning)</li>
+<p><strong>Trade-off:</strong></p>
+<li>DP não aplica (sem subestrutura ótima)</li>
+<li>BFS/DFS não usa bem (problema combinatório)</li>
+<li><strong>Backtracking</strong> é natural</li>
+<p><strong>CÓDIGO:</strong></p>
+<pre><code>def solveNQueens(n: int) -&gt; List[List[str]]:
+    """Backtracking: coloca rainhas linha por linha com pruning."""
+    result = []
+    board = [['.' for _ in range(n)] for _ in range(n)]
+    cols, diag1, diag2 = set(), set(), set()
+    # diag1: i - j (mesma anti-diagonal)
+    # diag2: i + j (mesma diagonal)
+    
+    def backtrack(row):
+        # Terminou: colocou n rainhas
+        if row == n:
+            result.append([''.join(line) for line in board])
+            return
+        
+        # Tenta colocar rainha em cada coluna desta linha
+        for col in range(n):
+            # Validação: não tem rainha nesta:
+            # - coluna
+            # - diagonal (i - j)
+            # - anti-diagonal (i + j)
+            if col in cols or (row - col) in diag1 or (row + col) in diag2:
+                continue  # Poda: posição inválida
+            
+            # Coloca rainha
+            board[row][col] = 'Q'
+            cols.add(col)
+            diag1.add(row - col)
+            diag2.add(row + col)
+            
+            # Recursão: próxima linha
+            backtrack(row + 1)
+            
+            # BACKTRACK: desfaz colocação
+            board[row][col] = '.'
+            cols.remove(col)
+            diag1.remove(row - col)
+            diag2.remove(row + col)
+    
+    backtrack(0)
+    return result
+
+# Tests
+result_4 = solveNQueens(4)
+assert len(result_4) == 2          # 4-Queens tem 2 soluções
+assert all(len(sol) == 4 for sol in result_4)
+
+result_1 = solveNQueens(1)
+assert len(result_1) == 1          # 1-Queens tem 1 solução
+assert result_1[0][0] == "Q"
+
+print("✓ N-Queens Passed")</code></pre>
+<p><strong>Complexidade:</strong></p>
+<li>Time: O(N!) - no pior caso explora todas as permutações</li>
+<p>Mas com pruning, muito mais rápido na prática</p>
+<li>Space: O(N) - recursion stack depth + sets</li>
+<hr>
+<h3>Container With Most Water (Two Pointers)</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>heights: List[int]</code> (altura de cada barra vertical)</li>
+<li>Output: <code>int</code> (máxima área de água)</li>
+<li>Edge: <code>[]</code>, <code>[1, 1]</code>, alturas podem ser 0</li>
+<li>Propriedade: <strong>Greedy + contraste</strong> (duas pontas convergem)</li>
+<p><strong>PLAN:</strong></p>
+<li>Força bruta: Todos os pares (i, j) → O(n²) ❌</li>
+<li>Two Pointers: Começa nas extremidades, move o menor → O(n) ✅✅ <strong>MELHOR</strong></li>
+<p><strong>Intuição Greedy:</strong></p>
+<pre><code>Área = min(height[left], height[right]) × (right - left)
+
+Se move o MAIOR → distância diminui, altura não aumenta muito
+Se move o MENOR → chance de encontrar altura maior (área cresce)</code></pre>
+<p><strong>CÓDIGO:</strong></p>
+<pre><code>def maxArea(heights: List[int]) -&gt; int:
+    """Two Pointers: começa nas extremidades, move o menor."""
+    left, right = 0, len(heights) - 1
+    max_area = 0
+    
+    while left &lt; right:
+        # Calcula área atual
+        width = right - left
+        current_area = min(heights[left], heights[right]) * width
+        max_area = max(max_area, current_area)
+        
+        # Move o ponteiro da barra MENOR
+        # (esperança: encontrar barra maior)
+        if heights[left] &lt; heights[right]:
+            left += 1
+        else:
+            right -= 1
+    
+    return max_area
+
+# Tests
+assert maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]) == 49   # Entre índices 1 e 8
+assert maxArea([1, 1]) == 1                          # Mínimo
+assert maxArea([4, 3, 2, 1, 4]) == 16                # Extremidades
+assert maxArea([2, 3, 4, 5, 18, 17, 6]) == 17        # Meio
+print("✓ Container With Most Water Passed")</code></pre>
+<p><strong>Trade-off:</strong></p>
+<li>Força bruta O(n²) é correto mas lento</li>
+<li>Two Pointers O(n) explora greedy: mover o menor sempre é ótimo para próxima iteração</li>
+<p><strong>Complexidade:</strong></p>
+<li>Time: O(n) - dois ponteiros passam uma vez</li>
+<li>Space: O(1) - apenas variáveis</li>
+<hr>
+<h3>Longest Repeating Character Replacement (Sliding Window)</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>s: str</code>, <code>k: int</code> (máximo de replacements)</li>
+<li>Output: <code>int</code> (máximo length de substring com mesmo caractere)</li>
+<li>Propriedade: <strong>Janela variável</strong> (expandir/contrair)</li>
+<p><strong>PLAN:</strong></p>
+<li>Força bruta: Todas as substrings, contar replacements → O(n³) ❌</li>
+<li>Sliding Window: Manter janela onde (len - max_freq) <= k → O(n) ✅✅ <strong>MELHOR</strong></li>
+<p><strong>Lógica:</strong></p>
+<pre><code>window_len = right - left + 1
+chars_to_replace = window_len - max_frequency_in_window
+
+Se chars_to_replace &lt;= k:  janela válida, expanda
+Senão:                     contraia (move left)</code></pre>
+<p><strong>CÓDIGO:</strong></p>
+<pre><code>def characterReplacement(s: str, k: int) -&gt; int:
+    """Sliding Window: mantém janela com até k replacements."""
+    from collections import Counter
+    
+    left = 0
+    char_count = Counter()
+    max_freq = 0
+    max_length = 0
+    
+    for right in range(len(s)):
+        # Expande janela
+        char_count[s[right]] += 1
+        max_freq = max(max_freq, char_count[s[right]])
+        
+        # Valida janela
+        window_len = right - left + 1
+        chars_to_replace = window_len - max_freq
+        
+        # Se precisa trocar mais de k caracteres, contrai
+        if chars_to_replace &gt; k:
+            char_count[s[left]] -= 1
+            left += 1
+        
+        # Atualiza resposta
+        max_length = max(max_length, right - left + 1)
+    
+    return max_length
+
+# Tests
+assert characterReplacement("ABAB", 2) == 4      # Troca 2 B's → "AAAA"
+assert characterReplacement("ABBB", 2) == 4      # Troca 2 A's → "BBBB"
+assert characterReplacement("AABAB", 1) == 3     # "AAA" ou "BBB"
+assert characterReplacement("A", 0) == 1         # Sem replacements
+print("✓ Longest Repeating Character Replacement Passed")</code></pre>
+<p><strong>Trade-off:</strong></p>
+<li>DP com memoization O(n·26) é correto mas overkill</li>
+<li>Sliding Window O(n) com hash map é natural e elegante</li>
+<p><strong>Complexidade:</strong></p>
+<li>Time: O(n) - cada caractere processado uma vez</li>
+<li>Space: O(26) = O(1) - no máximo 26 letras</li>
+<hr>
+<h3>Word Search / Trie (DFS Backtracking)</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>board: List[List[str]]</code>, <code>word: str</code></li>
+<li>Output: <code>bool</code> (palavra existe no tabuleiro?)</li>
+<li>Restrição: Pode se mover up/down/left/right, cada célula usa apenas 1x</li>
+<li>Propriedade: <strong>Grafo com backtracking</strong> (explora caminhos, marca visitado)</li>
+<p><strong>PLAN:</strong></p>
+<li>BFS/DFS com visited set: Marca célula visitada durante busca</li>
+<li>Backtracking: Unmark ao retornar (permite reexploração em outros caminhos)</li>
+<p><strong>Lógica DFS:</strong></p>
+<pre><code>def dfs(i, j, idx):
+    # Base: encontrou toda a palavra
+    if idx == len(word):
+        return True
+    
+    # Validação
+    if i &lt; 0 or j &lt; 0 or i &gt;= rows or j &gt;= cols:
+        return False
+    if board[i][j] != word[idx] or (i, j) in visited:
+        return False
+    
+    # Backtrack
+    visited.add((i, j))
+    
+    for di, dj in [(0,1), (0,-1), (1,0), (-1,0)]:
+        if dfs(i+di, j+dj, idx+1):
+            return True
+    
+    visited.remove((i, j))  # ← CRUCIAL: remove ao retornar
+    return False</code></pre>
+<p><strong>CÓDIGO:</strong></p>
+<pre><code>def exist(board: List[List[str]], word: str) -&gt; bool:
+    """DFS com backtracking: marca visitado, depois desmarcar."""
+    if not board or not word:
+        return False
+    
+    rows, cols = len(board), len(board[0])
+    visited = set()
+    
+    def dfs(i, j, idx):
+        # Terminou a palavra?
+        if idx == len(word):
+            return True
+        
+        # Validação de limites
+        if i &lt; 0 or i &gt;= rows or j &lt; 0 or j &gt;= cols:
+            return False
+        
+        # Validação de caractere e visitado
+        if board[i][j] != word[idx] or (i, j) in visited:
+            return False
+        
+        # MARCA COMO VISITADO
+        visited.add((i, j))
+        
+        # Explora 4 direções
+        directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+        for di, dj in directions:
+            if dfs(i + di, j + dj, idx + 1):
+                # ENCONTROU! Pode retornar sem limpar
+                return True
+        
+        # BACKTRACK: remove do visitado para outras explorações
+        visited.remove((i, j))
+        return False
+    
+    # Tenta começar de cada posição
+    for i in range(rows):
+        for j in range(cols):
+            if board[i][j] == word[0] and dfs(i, j, 0):
+                return True
+    
+    return False
+
+# Tests
+board1 = [["O", "A", "A"], ["A", "A", "A"], ["A", "A", "O"]]
+assert exist(board1, "AAA") == True           # Múltiplos caminhos
+
+board2 = [["A", "B"], ["A", "A"]]
+assert exist(board2, "AAB") == True           # Frente e trás
+
+board3 = [["A", "B"], ["C", "D"]]
+assert exist(board3, "ABCD") == False         # Não existe
+
+board4 = [["A"]]
+assert exist(board4, "A") == True             # Célula única
+
+print("✓ Word Search Passed")</code></pre>
+<p><strong>Trade-off:</strong></p>
+<li>BFS puro não funciona (precisa rastrear caminho + backtrack)</li>
+<li>DFS com backtracking é natural para esse tipo de exploração</li>
+<p><strong>Complexidade:</strong></p>
+<li>Time: O(n·m·4^L) onde n=rows, m=cols, L=len(word)</li>
+<p>4^L porque cada célula pode explorar 4 direções no pior caso</p>
+<li>Space: O(L) - recursion stack (backtracking depth)</li>
+<hr>
+<h3>Union-Find / DSU (Disjoint Set Union)</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>edges: List[List[int]]</code>, <code>n: int</code> (nós)</li>
+<li>Output: <code>int</code> (número de componentes conectadas) ou <code>bool</code> (tem ciclo?)</li>
+<li>Propriedade: <strong>Componentes do grafo não-dirigido</strong></li>
+<p><strong>PLAN:</strong></p>
+<li>DFS/BFS clássico: Mark visited → O(V + E) ✅✅ (simples)</li>
+<li>Union-Find (DSU): Merge componentes durante construção → O(V + E·α(V)) ✅✅ (elegante)</li>
+<p><strong>Quando usar DSU?</strong></p>
+<pre><code>✅ Múltiplas queries de conectividade
+✅ Detectar ciclos
+✅ Mínimum Spanning Tree (Kruskal)
+✅ Grafo dinâmico (adiciona arestas incrementalmente)
+
+❌ Precisa do caminho exato → use DFS/BFS
+❌ Grafo direcionado com ordem específica → use Topological Sort</code></pre>
+<p><strong>CÓDIGO:</strong></p>
+<pre><code>class DSU:
+    def __init__(self, n):
+        self.parent = list(range(n))
+        self.rank = [0] * n
+    
+    def find(self, x):
+        """Encontra raiz com path compression."""
+        if self.parent[x] != x:
+            self.parent[x] = self.find(self.parent[x])
+        return self.parent[x]
+    
+    def union(self, x, y):
+        """Une dois componentes. Retorna False se já estavam unidos (ciclo!)."""
+        px, py = self.find(x), self.find(y)
+        
+        if px == py:
+            return False  # Já no mesmo componente (ciclo detectado!)
+        
+        # Union by rank: árvore menor aponta para maior
+        if self.rank[px] &lt; self.rank[py]:
+            px, py = py, px
+        
+        self.parent[py] = px
+        if self.rank[px] == self.rank[py]:
+            self.rank[px] += 1
+        
+        return True  # Nova conexão
+
+
+def countComponents(n: int, edges: List[List[int]]) -&gt; int:
+    """Conta componentes conectadas usando DSU."""
+    dsu = DSU(n)
+    
+    for u, v in edges:
+        dsu.union(u, v)
+    
+    # Conta quantas raízes únicas existem
+    return len(set(dsu.find(i) for i in range(n)))
+
+
+def hasRedundantConnection(edges: List[List[int]]) -&gt; List[int]:
+    """Detecta ciclo (aresta redundante) em grafo não-dirigido."""
+    dsu = DSU(len(edges) + 1)
+    
+    for u, v in edges:
+        # Se não conseguir unir, é porque já estavam conectados (ciclo!)
+        if not dsu.union(u, v):
+            return [u, v]
+    
+    return []
+
+# Tests
+# Exemplo 1: 3 componentes conectadas
+edges1 = [[0, 1], [1, 2], [4, 5]]
+assert countComponents(6, edges1) == 3  # {0,1,2}, {3}, {4,5}
+
+# Exemplo 2: Detecta ciclo
+edges2 = [[1, 2], [1, 3], [2, 3]]
+assert hasRedundantConnection(edges2) == [2, 3]  # Ciclo: 1-2-3-1
+
+# Exemplo 3: Sem ciclo
+edges3 = [[1, 2], [2, 3], [3, 4]]
+assert hasRedundantConnection(edges3) == []
+
+print("✓ Union-Find / DSU Passed")</code></pre>
+<p><strong>Trade-off:</strong></p>
+<li>DFS: Mais intuitivo, mais simples para 1-2 queries</li>
+<li>DSU: Melhor para múltiplas queries, mais elegante em Union-Find específico</li>
+<p><strong>Complexidade:</strong></p>
+<li>find(): O(α(n)) ≈ O(1) com path compression</li>
+<li>union(): O(α(n)) ≈ O(1) com union by rank</li>
+<li>Total: O(E·α(n)) ≈ O(E)</li>
+<hr>
+<h2>🛠️ Checklist de Implementação (TASKS)</h2>
+<p>Antes de começar a código:</p>
+<pre><code>ESTRUTURA:
+□ Função assinada com tipos (Python 3.9+)
+□ Docstring com descrição, exemplo, complexidade
+□ Função auxiliar se necessário (helper function)
+
+CÓDIGO:
+□ Variáveis com nomes descritivos
+□ Comentários explicando LÓGICA, não óbvio
+□ Edge cases tratados ([], None, etc)
+□ Sem magic numbers (use constantes nomeadas)
+
+VALIDAÇÃO:
+□ Casos normais testados
+□ Edge cases testados
+□ Stress test (grande entrada)
+□ Tracear manualmente um exemplo
+
+COMPLEXIDADE:
+□ Time complexity declarado
+□ Space complexity declarado
+□ Explicação de por que é essa complexidade</code></pre>
+<h3>Template TASKS</h3>
+<pre><code>from typing import List
+
+def solve_problem(nums: List[int]) -&gt; int:
+    """
+    Descrição clara do que faz.
+    
+    Args:
+        nums: Lista de inteiros, 1 &lt;= n &lt;= 10^4
+        
+    Returns:
+        int: Resultado da operação
+        
+    Time:  O(n log n) - sorting + binary search
+    Space: O(1) - only constant extra space
+    
+    Examples:
+        &gt;&gt;&gt; solve_problem([3, 6, 7, 11])
+        4
+    """
+    # SPEC check: validate input
+    if not nums:
+        return 0
+    
+    # PLAN: implement chosen pattern
+    result = 0
+    # ... main logic ...
+    
+    # TASKS: return and validate
+    return result
+
+# ─── Tests ───────────────────────────────────────
+if __name__ == "__main__":
+    # Normal cases
+    assert solve_problem([3, 6, 7, 11]) == 4
+    
+    # Edge cases
+    assert solve_problem([]) == 0
+    assert solve_problem([1]) == 1
+    
+    # Stress (large input)
+    assert solve_problem(list(range(1000))) &gt;= 0
+    
+    print("All tests passed ✓")</code></pre>
+<hr>
+<h2>📚 Referências Rápidas</h2>
+<h3>Complexidade Assintótica</h3>
+<pre><code>O(1)        ← Constant (best)
+O(log n)    ← Logarithmic (binary search)
+O(n)        ← Linear (simple loop)
+O(n log n)  ← Linearithmic (sorting, merge)
+O(n²)       ← Quadratic (nested loops, DP 2D)
+O(n³)       ← Cubic (rare, avoid)
+O(2^n)      ← Exponential (backtracking, brute force)
+O(n!)       ← Factorial (permutations, very bad)</code></pre>
+<h3>Space Complexity</h3>
+<pre><code>O(1)        ← Constant, no extra space
+O(log n)    ← Recursion stack depth
+O(n)        ← Array/Hash storage
+O(n²)       ← 2D DP table</code></pre>
+<hr>
+<h2>🎓 Resumo: Não Decore, Escolha!</h2>
+<pre><code>┌─────────────────────────────────────────────────────────┐
+│ REGRA DE OURO PARA NÃO DECORAR:                         │
+│                                                          │
+│ 1. SPEC: Entenda TODAS as constraints do problema       │
+│ 2. PLAN: Reconheça qual PROPRIEDADE o problema tem      │
+│ 3. TASKS: Implemente a solução que EXPLORA essa prop.   │
+│                                                          │
+│ Exemplo: Problema tem subestrutura ótima?               │
+│          → DP é natural (não decoração)                 │
+│                                                          │
+│ Exemplo: Array é sorted?                                │
+│          → Binary Search é natural (não decoração)      │
+└─────────────────────────────────────────────────────────┘</code></pre>
+<hr>
+<h2>🔗 Exemplo Completo: Koko Eating Bananas</h2>
+<h3>SPEC</h3>
+<p><strong>Problema:</strong> Koko adora bananas. Há <code>n</code> pilhas. Cada pilha <code>i</code> tem <code>piles[i]</code> bananas. Ela tem <code>h</code> horas. A cada hora, ela escolhe UMA pilha e come <code>k</code> bananas daquela pilha. Se a pilha tiver menos de <code>k</code>, ela come tudo. Qual o <strong>mínimo <code>k</code></strong> para comer todas as bananas em <code>h</code> horas?</p>
+<li><strong>Input:</strong> <code>piles: List[int]</code> (bananas por pilha), <code>h: int</code> (horas disponíveis)</li>
+<li><strong>Output:</strong> <code>int</code> (mínima velocidade em bananas/hora)</li>
+<li><strong>Edge:</strong> <code>[]</code>, <code>[1]</code>, <code>[10^9]</code>, <code>h = 1</code> (precisa comer tudo em 1 hora!)</li>
+<li><strong>Propriedade CRÍTICA:</strong> <strong>Monotonicidade</strong> ✅ se consegue com <code>k=5</code>, consegue com <code>k=6</code> também!</li>
+<h3>PLAN</h3>
+<h4>🎯 Reconhecer o Padrão</h4>
+<pre><code>1. Preciso OTIMIZAR (encontrar mínimo)
+2. A função objetivo é MONOTÔNICA?
+   
+   hours_needed(k=1)  = 4+6+7+11 = 28 horas  ← lento
+   hours_needed(k=2)  = 2+3+4+6  = 15 horas  ← mais rápido
+   hours_needed(k=3)  = 2+2+3+4  = 11 horas  ← ainda melhor
+   hours_needed(k=4)  = 1+2+2+3  = 8 horas   ← ótimo! (k=4)
+   hours_needed(k=5)  = 1+2+2+3  = 8 horas   ← mesmo que k=4
+   
+   Padrão: CONFORME k AUMENTA → hours_needed(k) DIMINUI ✓
+           (Função é DECRESCENTE = MONOTÔNICA!)
+   
+3. Logo: Binary Search consegue encontrar o mínimo k!</code></pre>
+<h4>📊 Por quê `ceil(pile / k)` é correto?</h4>
+<pre><code>Pilha com 11 bananas, velocidade k:
+
+k=1: 11 horas (1 banana/hora × 11 bananas)
+k=2: ceil(11/2) = ceil(5.5) = 6 horas
+     (Hora 1-5: 2 ban/hora = 10 bananas)
+     (Hora 6: 1 banana restante, ainda conta 1 hora!)
+k=3: ceil(11/3) = ceil(3.67) = 4 horas
+     (Hora 1-3: 3 ban/hora = 9 bananas)
+     (Hora 4: 2 bananas restantes, ainda conta 1 hora!)
+k=4: ceil(11/4) = ceil(2.75) = 3 horas
+     
+⚠️ NUNCA FAÇA: 11 / 4 = 2.75 horas (ERRADO!)
+   A gente precisa ARREDONDAR PARA CIMA porque:
+   - Se sobrar nem que seja 1 banana, precisa de 1 hora inteira!</code></pre>
+<h4>✅ Fórmula `ceil(a/b)` em Python</h4>
+<pre><code># ❌ ERRADO - Float impreciso para números grandes
+import math
+horas = math.ceil(11 / 4)  # Funciona, mas perde precisão em 10^9
+
+# ✅ CERTO - Integer division sem float
+horas = (11 + 4 - 1) // 4  # = 14 // 4 = 3
+horas = (pile + k - 1) // k  # Fórmula universal!
+
+# Prova: Por que (a + b - 1) // b funciona?
+# Caso 1: a % b == 0 (divisão exata)
+#   (12 + 3 - 1) // 3 = 14 // 3 = 4 ✓ (correto: 12 / 3 = 4)
+#
+# Caso 2: a % b != 0 (tem resto)
+#   (11 + 3 - 1) // 3 = 13 // 3 = 4 ✓ (correto: ceil(11/3) = 4)</code></pre>
+<h4>🔍 Template: Binary Search on Answer</h4>
+<pre><code>Objetivo: Encontrar MÍNIMO k onde hours_needed(k) &lt;= h
+
+min_speed = 1           ← velocidade mínima possível
+max_speed = max(piles)  ← velocidade máxima (come uma pilha por hora)
+
+Buscar a resposta como se fosse um número em um range!
+[1, 2, 3, 4, 5, 6, ..., max_piles]
+             ↑ resposta está aqui em algum lugar</code></pre>
+<h3>TASKS</h3>
+<pre><code>from typing import List
+
+def minEatingSpeed(piles: List[int], h: int) -&gt; int:
+    """
+    Encontra mínima velocidade para comer todas as bananas em h horas.
+    
+    Estratégia: Binary Search na velocidade (1 até max(piles))
+    
+    Args:
+        piles: Lista de inteiros, n pilhas
+        h: Inteiro, horas disponíveis
+    
+    Returns:
+        int: Mínima velocidade em bananas/hora
+    
+    Time:  O(n · log(max(piles)))
+           - log(max) iterações de binary search
+           - n para calcular horas_needed a cada iteração
+    
+    Space: O(1)
+    
+    Example:
+        &gt;&gt;&gt; minEatingSpeed([3, 6, 7, 11], 8)
+        4  # Com velocidade 4: 1+2+2+3 = 8 horas (perfeit!)
+    """
+    
+    def hours_needed(speed: int) -&gt; int:
+        """
+        Calcula TOTAL de horas necessárias para comer todas as pilhas
+        com uma velocidade k.
+        
+        Para cada pilha, calcula: ceil(pile / speed) = (pile + speed - 1) // speed
+        """
+        total_hours = 0
+        for pile in piles:
+            # Horas para essa pilha: arredonda para CIMA
+            # (pile + speed - 1) // speed é equivalente a ceil(pile / speed)
+            hours_for_this_pile = (pile + speed - 1) // speed
+            total_hours += hours_for_this_pile
+        return total_hours
+    
+    # ─── Binary Search ───────────────────────────────
+    left = 1                  # Velocidade MÍNIMA
+    right = max(piles)        # Velocidade MÁXIMA
+    
+    # Invariante: resposta está em [left, right]
+    while left &lt; right:
+        mid = (left + right) // 2
+        
+        # Pergunta: Com velocidade mid, consigo terminar em h horas?
+        if hours_needed(mid) &lt;= h:
+            # SIM! Então posso tentar MAIS DEVAGAR
+            # A resposta está em [left, mid]
+            right = mid
+        else:
+            # NÃO! Preciso comer MAIS RÁPIDO
+            # A resposta está em [mid+1, right]
+            left = mid + 1
+    
+    # Agora left == right e ambos apontam para a resposta!
+    return left
+
+
+# ─── TESTS ───────────────────────────────────────────
+if __name__ == "__main__":
+    # Exemplo da descrição
+    print("Test 1: piles=[3,6,7,11], h=8")
+    result = minEatingSpeed([3, 6, 7, 11], 8)
+    print(f"  Velocidade mínima: {result}")
+    print(f"  Horas needed: {(3 + result - 1) // result + (6 + result - 1) // result + (7 + result - 1) // result + (11 + result - 1) // result}")
+    assert result == 4, "Esperava 4!"
+    
+    # Edge: apenas 1 pilha
+    print("\nTest 2: piles=[1000000000], h=2")
+    result = minEatingSpeed([1000000000], 2)
+    print(f"  Velocidade mínima: {result}")
+    assert result == 500000000, f"Esperava 500000000, got {result}!"
+    
+    # Edge: velocidade máxima necessária
+    print("\nTest 3: piles=[1,1,1,1], h=4")
+    result = minEatingSpeed([1, 1, 1, 1], 4)
+    print(f"  Velocidade mínima: {result}")
+    assert result == 1, "Esperava 1!"
+    
+    # Edge: uma hora, comer tudo em 1 hora
+    print("\nTest 4: piles=[312884132], h=968709470")
+    result = minEatingSpeed([312884132], 968709470)
+    print(f"  Velocidade mínima: {result}")
+    assert result == 1, "Esperava 1!"
+    
+    print("\n✓ Todos os testes passaram!")</code></pre>
+<h4>🧮 Visualização Passo a Passo</h4>
+<pre><code>Entrada: piles = [3, 6, 7, 11], h = 8
+
+Binary Search Loop:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Iteração 1:
+  left=1, right=11
+  mid = (1+11)//2 = 6
+  hours_needed(6) = ceil(3/6) + ceil(6/6) + ceil(7/6) + ceil(11/6)
+                  = 1 + 1 + 2 + 2 = 6 &lt;= 8? SIM!
+  → Podemos ir mais devagar: right = 6
+
+Iteração 2:
+  left=1, right=6
+  mid = (1+6)//2 = 3
+  hours_needed(3) = ceil(3/3) + ceil(6/3) + ceil(7/3) + ceil(11/3)
+                  = 1 + 2 + 3 + 4 = 10 &lt;= 8? NÃO!
+  → Precisa ser mais rápido: left = 4
+
+Iteração 3:
+  left=4, right=6
+  mid = (4+6)//2 = 5
+  hours_needed(5) = ceil(3/5) + ceil(6/5) + ceil(7/5) + ceil(11/5)
+                  = 1 + 2 + 2 + 3 = 8 &lt;= 8? SIM!
+  → Podemos ir mais devagar: right = 5
+
+Iteração 4:
+  left=4, right=5
+  mid = (4+5)//2 = 4
+  hours_needed(4) = ceil(3/4) + ceil(6/4) + ceil(7/4) + ceil(11/4)
+                  = 1 + 2 + 2 + 3 = 8 &lt;= 8? SIM!
+  → Podemos ir mais devagar: right = 4
+
+Iteração 5:
+  left=4, right=4
+  left == right → PARE!
+
+Resposta: 4 ✓</code></pre>
+<h4>📈 Gráfico da Monotonicidade</h4>
+<pre><code>Hours Needed vs Speed
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Horas ↑
+  28  |●  (k=1: lento)
+  25  |
+  20  | ●   (k=2: mais rápido)
+  15  |
+  10  |  ●   (k=3)
+   8  |   ● ●●● (k=4,5,6: resposta k=4)
+      |        ●●●● (k=7+: ainda mais rápido, mas k=4 é mínimo!)
+      └─────────────────────────────→ k (velocidade)
+        1  2  3  4  5  6  7  8
+        
+Propriedade: SEMPRE DECRESCENTE (monotônico!)
+Logo: Binary Search funciona! ✓</code></pre>
+<hr>
+<h3>Daily Temperatures (Monotonic Stack)</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>temperatures: List[int]</code> (temperaturas diárias)</li>
+<li>Output: <code>List[int]</code> (dias até próxima temperatura MAIOR)</li>
+<li>Edge: <code>[1]</code>, <code>[1,1,1,1]</code> (sem próxima maior), <code>[30,40,50,60]</code> (já crescente)</li>
+<li>Propriedade: <strong>Vizinhança/Padrão</strong> (próximo elemento maior)</li>
+<p><strong>PLAN:</strong></p>
+<li>Força bruta: Para cada dia, procura adiante → O(n²) ❌</li>
+<li>Monotonic Stack: Mantém stack de índices em ordem decrescente → O(n) ✅✅ <strong>MELHOR</strong></li>
+<p><strong>Intuição:</strong></p>
+<pre><code>Quando temperatura AUMENTA, sabemos a resposta para dias anteriores!
+
+Exemplo: [73, 74, 75, 71, 69, 72, 76, 73]
+
+dia 0 (73): Stack vazio, empilha
+dia 1 (74): 74 &gt; 73? SIM! Pop 73, resposta[0] = 1-0 = 1
+            Empilha 74
+dia 2 (75): 75 &gt; 74? SIM! Pop 74, resposta[1] = 2-1 = 1
+            Empilha 75
+dia 5 (72): 72 &gt; 71? SIM! Pop 71, resposta[3] = 5-3 = 2
+            72 &gt; 75? NÃO, empilha 72
+dia 6 (76): 76 &gt; 72? SIM! Pop 72, resposta[5] = 6-5 = 1
+            76 &gt; 75? SIM! Pop 75, resposta[2] = 6-2 = 4
+            Empilha 76
+
+Resultado: [1, 1, 4, 2, 1, 1, 0, 0] ✓</code></pre>
+<p><strong>CÓDIGO:</strong></p>
+<pre><code>def dailyTemperatures(temps: List[int]) -&gt; List[int]:
+    """Monotonic Stack (decrescente): mantém índices de temperaturas."""
+    n = len(temps)
+    result = [0] * n
+    stack = []  # Guarda ÍNDICES, mantendo temperaturas em ordem DECRESCENTE
+    
+    for i, temp in enumerate(temps):
+        # Enquanto temperatura atual &gt; topo do stack
+        while stack and temp &gt; temps[stack[-1]]:
+            j = stack.pop()
+            result[j] = i - j  # Encontrou a resposta!
+        
+        # Empilha índice atual
+        stack.append(i)
+    
+    return result
+
+# Tests
+assert dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]) == [1, 1, 4, 2, 1, 1, 0, 0]
+assert dailyTemperatures([30, 40, 50, 60]) == [1, 1, 1, 0]
+assert dailyTemperatures([30, 60, 90]) == [1, 1, 0]
+assert dailyTemperatures([89, 62, 70, 58, 47, 47, 46, 76, 100, 70]) == [8, 1, 5, 3, 8, 4, 3, 2, 0, 0]
+
+print("✓ Daily Temperatures Passed")</code></pre>
+<p><strong>Trade-off:</strong></p>
+<li>Força bruta O(n²) é correto mas lento</li>
+<li>Monotonic Stack O(n) é elegante: cada elemento entra/sai da stack UMA VEZ</li>
+<p><strong>Complexidade:</strong></p>
+<li>Time: O(n) - cada índice entra e sai UMA VEZ</li>
+<li>Space: O(n) - stack pode ter até n elementos no pior caso</li>
+<hr>
+<h3>Kahn's Algorithm (Topological Sort)</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>edges: List[List[int]]</code>, <code>n: int</code> (DAG - Directed Acyclic Graph)</li>
+<li>Output: <code>List[int]</code> (ordem topológica) ou detectar ciclo</li>
+<li>Propriedade: <strong>Dependências</strong> - se há ciclo, retorna []</li>
+<li>Exemplo: Course Prerequisites, Task Scheduling</li>
+<p><strong>PLAN:</strong></p>
+<li>DFS com stack: Explorar profundidade → O(V+E) ✅</li>
+<li>Kahn's BFS: In-degree + queue → O(V+E) ✅✅ <strong>MELHOR para detectar ciclos</strong></li>
+<p><strong>Intuição:</strong></p>
+<pre><code>1. Calcula in-degree (quantas arestas entram) de cada nó
+2. Começa com nós que têm in-degree = 0 (sem dependências)
+3. Processa nó: adiciona à resposta, reduz in-degree dos vizinhos
+4. Se conseguir processar V nós → topológica válida
+   Se não → ciclo detectado!</code></pre>
+<p><strong>CÓDIGO:</strong></p>
+<pre><code>def canFinish(n: int, edges: List[List[int]]) -&gt; bool:
+    """Kahn: detecta ciclo em DAG."""
+    # Construir grafo e in-degree
+    graph = [[] for _ in range(n)]
+    in_degree = [0] * n
+    
+    for course, prereq in edges:
+        graph[prereq].append(course)
+        in_degree[course] += 1
+    
+    # Fila com nós que têm in-degree = 0
+    queue = [i for i in range(n) if in_degree[i] == 0]
+    count = 0
+    
+    while queue:
+        course = queue.pop(0)
+        count += 1
+        
+        # Reduz in-degree dos vizinhos
+        for next_course in graph[course]:
+            in_degree[next_course] -= 1
+            if in_degree[next_course] == 0:
+                queue.append(next_course)
+    
+    # Se processou todos os cursos, não tem ciclo
+    return count == n
+
+
+def topologicalSort(n: int, edges: List[List[int]]) -&gt; List[int]:
+    """Kahn: retorna ordem topológica ou [] se tem ciclo."""
+    graph = [[] for _ in range(n)]
+    in_degree = [0] * n
+    
+    for u, v in edges:
+        graph[u].append(v)
+        in_degree[v] += 1
+    
+    queue = [i for i in range(n) if in_degree[i] == 0]
+    result = []
+    
+    while queue:
+        node = queue.pop(0)
+        result.append(node)
+        
+        for neighbor in graph[node]:
+            in_degree[neighbor] -= 1
+            if in_degree[neighbor] == 0:
+                queue.append(neighbor)
+    
+    # Se não processou todos, tem ciclo
+    return result if len(result) == n else []
+
+# Tests
+# DAG válido: 0 → 1 → 2
+assert canFinish(3, [[1, 0], [2, 1]]) == True
+
+# Ciclo: 0 → 1 → 0
+assert canFinish(2, [[1, 0], [0, 1]]) == False
+
+# Sem arestas
+assert canFinish(3, []) == True
+
+# Topological sort
+result = topologicalSort(4, [[1, 0], [2, 0], [3, 1], [3, 2]])
+assert len(result) == 4  # Todos processados
+
+print("✓ Kahn's Algorithm / Topological Sort Passed")</code></pre>
+<p><strong>Complexidade:</strong></p>
+<li>Time: O(V + E) - visita cada nó e aresta uma vez</li>
+<li>Space: O(V + E) - grafo + queue</li>
+<hr>
+<h3>Dijkstra's Algorithm (Shortest Path)</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>graph: List[List[Tuple]]</code> (grafo com pesos), <code>start: int</code></li>
+<li>Output: <code>List[int]</code> (distância mínima de cada nó até start)</li>
+<li>Propriedade: <strong>Grafos ponderados</strong> - sem pesos negativos!</li>
+<li>Padrão: Network Delay Time, Path With Minimum Effort</li>
+<p><strong>PLAN:</strong></p>
+<li>BFS simples: Não funciona com pesos ❌</li>
+<li>Dijkstra: Greedy com Priority Queue → O((V+E) log V) ✅✅ <strong>MELHOR</strong></li>
+<p><strong>Intuição:</strong></p>
+<pre><code>1. Começa no nó start com distância 0
+2. Sempre processa o nó com MENOR distância ainda não visitado
+3. Atualiza distâncias dos vizinhos: dist[neighbor] = min(dist[neighbor], dist[current] + weight)
+4. Marca como visitado e continua</code></pre>
+<p><strong>CÓDIGO:</strong></p>
+<pre><code>import heapq
+from typing import List, Tuple
+
+def dijkstra(n: int, edges: List[List[int]], start: int) -&gt; List[int]:
+    """Dijkstra com Priority Queue: menor distância primeiro."""
+    # Construir grafo
+    graph = [[] for _ in range(n)]
+    for u, v, weight in edges:
+        graph[u].append((v, weight))
+        graph[v].append((u, weight))  # Se não-dirigido
+    
+    # Inicializa distâncias
+    dist = [float('inf')] * n
+    dist[start] = 0
+    visited = set()
+    
+    # Priority queue: (distância, nó)
+    pq = [(0, start)]
+    
+    while pq:
+        d, u = heapq.heappop(pq)
+        
+        # Já visitado
+        if u in visited:
+            continue
+        
+        visited.add(u)
+        
+        # Relaxa arestas
+        for v, weight in graph[u]:
+            if v not in visited:
+                new_dist = dist[u] + weight
+                if new_dist &lt; dist[v]:
+                    dist[v] = new_dist
+                    heapq.heappush(pq, (new_dist, v))
+    
+    return dist
+
+
+def networkDelayTime(times: List[List[int]], n: int, k: int) -&gt; int:
+    """Dijkstra: tempo para todos os nós receberem sinal."""
+    # Grafo: u → v com weight
+    graph = [[] for _ in range(n + 1)]
+    for u, v, time in times:
+        graph[u].append((v, time))
+    
+    # Dijkstra do nó k
+    dist = [float('inf')] * (n + 1)
+    dist[k] = 0
+    visited = set()
+    pq = [(0, k)]
+    
+    while pq:
+        d, u = heapq.heappop(pq)
+        
+        if u in visited:
+            continue
+        
+        visited.add(u)
+        
+        for v, weight in graph[u]:
+            if v not in visited:
+                new_dist = dist[u] + weight
+                if new_dist &lt; dist[v]:
+                    dist[v] = new_dist
+                    heapq.heappush(pq, (new_dist, v))
+    
+    # Distância máxima (tempo para todos receberem)
+    max_time = max(dist[1:n+1])
+    return max_time if max_time != float('inf') else -1
+
+# Tests
+# Exemplo: Sinal de 1 para 3 nós, k=1
+# Edges: 1→2 (1), 1→3 (4), 2→3 (2)
+# Path: 1→3 diretamente (4) ou 1→2→3 (3)
+assert networkDelayTime([[2, 1, 1], [2, 3, 1], [3, 4, 1]], 4, 1) == 4
+
+# Caminho direto
+assert networkDelayTime([[1, 2, 1]], 2, 1) == 1
+
+# Múltiplos caminhos
+assert networkDelayTime([[1, 2, 1], [1, 3, 4], [2, 3, 2]], 3, 1) == 4
+
+print("✓ Dijkstra's Algorithm Passed")</code></pre>
+<p><strong>Complexidade:</strong></p>
+<li>Time: O((V + E) log V) com Priority Queue</li>
+<li>Space: O(V + E) - grafo + estruturas</li>
+<hr>
+<h3>Merge Intervals (Interval Pattern)</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>intervals: List[List[int]]</code> (não-ordenados, sobrepostos)</li>
+<li>Output: <code>List[List[int]]</code> (intervalos mesclados)</li>
+<li>Propriedade: <strong>Ordenação + Varredura</strong> (sort depois merge)</li>
+<li>Exemplo: [[1,3],[2,6],[8,10],[15,18]] → [[1,6],[8,10],[15,18]]</li>
+<p><strong>PLAN:</strong></p>
+<li>Força bruta: Comparar todos com todos → O(n²) ❌</li>
+<li>Sort + Merge: Ordena por start, depois varre uma vez → O(n log n) ✅✅ <strong>MELHOR</strong></li>
+<p><strong>Intuição:</strong></p>
+<pre><code>1. Sort intervalos por start
+2. Varre: se current.start &lt;= last.end → merge (end = max(end))
+   Senão → novo intervalo</code></pre>
+<p><strong>CÓDIGO:</strong></p>
+<pre><code>def merge(intervals: List[List[int]]) -&gt; List[List[int]]:
+    """Merge intervals: sort + varredura."""
+    if not intervals:
+        return []
+    
+    # Sort por start (Python sorts por primeiro elemento por padrão)
+    intervals.sort()
+    
+    result = [intervals[0]]
+    
+    for current in intervals[1:]:
+        last = result[-1]
+        
+        # Sobrepõe? Merge
+        if current[0] &lt;= last[1]:
+            result[-1] = [last[0], max(last[1], current[1])]
+        else:
+            # Novo intervalo
+            result.append(current)
+    
+    return result
+
+# Tests
+assert merge([[1, 3], [2, 6], [8, 10], [15, 18]]) == [[1, 6], [8, 10], [15, 18]]
+assert merge([[1, 4], [4, 5]]) == [[1, 5]]
+assert merge([[1, 5]]) == [[1, 5]]
+assert merge([]) == []
+assert merge([[1, 3], [4, 6]]) == [[1, 3], [4, 6]]
+
+print("✓ Merge Intervals Passed")</code></pre>
+<p><strong>Complexidade:</strong></p>
+<li>Time: O(n log n) - sorting é dominante</li>
+<li>Space: O(1) - não conta output</li>
+<hr>
+<h3>Insert Interval (Interval Pattern Avançado)</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>intervals: List[List[int]]</code> (já ordenados!), <code>newInterval: List[int]</code></li>
+<li>Output: <code>List[List[int]]</code> (intervals + newInterval mesclado)</li>
+<li>Propriedade: <strong>Já ordenado</strong> - deve permanecer ordenado</li>
+<li>Tricky: Não pode fazer sort novamente!</li>
+<p><strong>PLAN:</strong></p>
+<li>Merge simples (sort): O(n log n) ❌ (não eficiente)</li>
+<li>3-pass: Before + Merge + After → O(n) ✅✅ <strong>MELHOR</strong></li>
+<p><strong>Intuição:</strong></p>
+<pre><code>Pass 1: Adiciona todos intervalos que terminam ANTES do new start
+Pass 2: Mescla TODOS que sobrepõem
+Pass 3: Adiciona todos que começam DEPOIS do new end</code></pre>
+<p><strong>CÓDIGO:</strong></p>
+<pre><code>
+def insert_clean(intervals: List[List[int]], newInterval: List[int]) -&gt; List[List[int]]:
+    """Insert interval: versão mais limpa."""
+    result = []
+    new_start, new_end = newInterval
+    
+    # Adiciona intervals que terminam antes do novo
+    i = 0
+    while i &lt; len(intervals) and intervals[i][1] &lt; new_start:
+        result.append(intervals[i])
+        i += 1
+    
+    # Mescla todos que sobrepõem
+    while i &lt; len(intervals) and intervals[i][0] &lt;= new_end:
+        new_start = min(new_start, intervals[i][0])
+        new_end = max(new_end, intervals[i][1])
+        i += 1
+    
+    result.append([new_start, new_end])
+    
+    # Adiciona rest que não sobrepõe
+    while i &lt; len(intervals):
+        result.append(intervals[i])
+        i += 1
+    
+    return result
+
+# Tests
+assert insert_clean([[1, 5]], [2, 3]) == [[1, 5]]  # Dentro
+assert insert_clean([[1, 5]], [2, 7]) == [[1, 7]]  # Sobrepõe direita
+assert insert_clean([[1, 5]], [0, 0]) == [[0, 0], [1, 5]]  # Antes
+assert insert_clean([[1, 2], [3, 5], [6, 7]], [5, 6]) == [[1, 2], [3, 7]]
+assert insert_clean([], [5, 7]) == [[5, 7]]  # Vazio
+
+print("✓ Insert Interval Passed")</code></pre>
+<p><strong>Complexidade:</strong></p>
+<li>Time: O(n) - uma ou duas varridas</li>
+<li>Space: O(1) - não conta output</li>
+<hr>
+<h3>Meeting Rooms II (Interval Pattern com Heap)</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>intervals: List[List[int]]</code> (horários de reuniões)</li>
+<li>Output: <code>int</code> (mínimo salas necessárias)</li>
+<li>Padrão: <strong>Evento + Varredura</strong> (início e fim de reunião)</li>
+<li>Tricky: Pode reusar sala se uma termina quando outra começa</li>
+<p><strong>PLAN:</strong></p>
+<li>Força bruta: Comparar todos com todos → O(n²) ❌</li>
+<li>Sort + Min Heap: Ordena starts, usa heap para tracks fins → O(n log n) ✅✅ <strong>MELHOR</strong></li>
+<p><strong>Intuição:</strong></p>
+<pre><code>1. Sort tudo: [start, "begin"], [end, "end"]
+2. Varre: 
+   - Início → adiciona sala (heap++)
+   - Fim → libera sala (heap--)
+3. Máximo tamanho da heap = salas necessárias</code></pre>
+<p><strong>CÓDIGO:</strong></p>
+<pre><code>def minMeetingRooms(intervals: List[List[int]]) -&gt; int:
+    """Min rooms: sort + min heap para track de saídas."""
+    if not intervals:
+        return 0
+    
+    # Cria lista de eventos: (tempo, tipo)
+    # tipo: 0 = saída (deve processar primeiro), 1 = entrada
+    events = []
+    for start, end in intervals:
+        events.append((start, 1))  # Início
+        events.append((end, 0))    # Fim
+    
+    # Sort: por tempo, depois por tipo (saída antes de entrada no mesmo tempo)
+    events.sort()
+    
+    rooms_needed = 0
+    rooms_in_use = 0
+    
+    for time, event_type in events:
+        if event_type == 1:  # Reunião começa
+            rooms_in_use += 1
+            rooms_needed = max(rooms_needed, rooms_in_use)
+        else:  # Reunião termina
+            rooms_in_use -= 1
+    
+    return rooms_needed
+
+
+def minMeetingRooms_heap(intervals: List[List[int]]) -&gt; int:
+    """Min rooms: heap versão com min-heap de saídas."""
+    if not intervals:
+        return 0
+    
+    # Sort por start
+    intervals.sort()
+    
+    # Min-heap: guardar fins das reuniões
+    end_times = []
+    heapq.heappush(end_times, intervals[0][1])
+    
+    for start, end in intervals[1:]:
+        # Se a reunião anterior terminou, reusar sala
+        if end_times[0] &lt;= start:
+            heapq.heappop(end_times)
+        
+        heapq.heappush(end_times, end)
+    
+    return len(end_times)
+
+# Tests
+assert minMeetingRooms([[0, 30], [5, 10], [15, 20]]) == 2  # 0-30 + 5-10
+assert minMeetingRooms([[7, 10], [2, 4]]) == 1  # Sem overlap
+assert minMeetingRooms([[1, 5], [1, 6], [1, 7]]) == 3  # Todas simultâneas
+assert minMeetingRooms([]) == 0  # Vazio
+
+print("✓ Meeting Rooms II Passed")</code></pre>
+<p><strong>Complexidade:</strong></p>
+<li>Time: O(n log n) - sorting + heap ops</li>
+<li>Space: O(n) - heap pode ter até n elementos</li>
+<h2>🌐 Padrões Diversos: Referência Rápida</h2>
+<p>Além dos exemplos detalhados acima, aqui estão outros padrões IMPORTANTES:</p>
+<h3>Trie + DFS (String Patterns)</h3>
+<pre><code>GATILHOS: "Prefix", "Word dictionary", "autocomplete"
+Exemplo: Implement Trie, Word Search II
+
+Padrão: Build Trie → DFS com backtracking
+Complexidade: O(n·m·k) onde n=dict size, m=word len, k=branching</code></pre>
+<h3>Topological Sort (DAG - Directed Acyclic Graph)</h3>
+<pre><code>GATILHOS: "Dependências", "Task scheduling", "Course prerequisites"
+Exemplo: Course Schedule, Task Sequencing
+
+Padrão: Kahn's algorithm (BFS) ou DFS com visited
+Complexidade: O(V + E)</code></pre>
+<h3>Segment Tree / Fenwick Tree (Range Queries)</h3>
+<pre><code>GATILHOS: "Range sum", "Point update", "Mínimo/máximo em range"
+Exemplo: Range Sum Query, Count of Smaller Numbers After Self
+
+Padrão: Build tree → Query + Update
+Complexidade: O(log n) por operação</code></pre>
+<h3>Two Pointers (String/Array)</h3>
+<pre><code>GATILHOS: "Duas extremidades", "Contraste", "Remove duplicates"
+Exemplo: Container With Most Water, Valid Palindrome, Merge Sorted
+
+Padrão: left=0, right=n-1, move baseado em condição
+Complexidade: O(n)</code></pre>
+<h3>Binary Search (não só em answer)</h3>
+<pre><code>GATILHOS: "Array ordenado", "Buscar posição", "First/Last occurrence"
+Exemplo: First Bad Version, Find Minimum in Rotated Array
+
+Padrão: left=0, right=n-1, mid=(left+right)//2
+Complexidade: O(log n)</code></pre>
+<h3>Greedy (com prova!)</h3>
+<pre><code>GATILHOS: "Máximo/mínimo com escolha local"
+Exemplo: Jump Game, Interval Scheduling, Gas Station
+
+⚠️ CRÍTICO: Sempre prove ou teste exaustivamente!
+Padrão: Escolha local ótima → ótimo global</code></pre>
+<h3>HashMap/HashSet (Frequency)</h3>
+<pre><code>GATILHOS: "Contagem", "Frequência", "Encontrar duplicatas"
+Exemplo: Two Sum, Contains Duplicate, Valid Anagram
+
+Padrão: count[x] += 1 durante iteração
+Complexidade: O(n) average, O(n²) worst case (colisões)</code></pre>
+<h3>Heap / Priority Queue (Top K)</h3>
+<pre><code>GATILHOS: "Top K", "Kth elemento", "Merge K lists"
+Exemplo: Kth Largest Element, Top K Frequent Words
+
+Padrão: heappush() / heappop()
+Complexidade: O(n log k)</code></pre>
+<h3>Dynamic Programming (Subproblems)</h3>
+<pre><code>GATILHOS: "Mínimo/máximo", "Contar formas", "É possível?"
+Exemplo: Coin Change, House Robber, LIS
+
+Padrão: dp[i] = f(dp[i-1], dp[i-2], ...)
+Complexidade: O(n·m) ou O(n²)</code></pre>
+<h3>Backtracking (All Solutions)</h3>
+<pre><code>GATILHOS: "Todas as combinações", "Todas as permutações", "Puzzles"
+Exemplo: N-Queens, Permutations, Sudoku Solver
+
+Padrão: Explore → Prune → Backtrack
+Complexidade: O(k·n!) onde k é tamanho da solução</code></pre>
+<hr>
+<h2>📊 Matriz de Decisão Rápida</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│ TIPO DE PROBLEMA → PADRÃO SUGERIDO                          │
+├─────────────────────────────────────────────────────────────┤
+│ Array/String ordenado?                                      │
+│  → Binary Search O(log n)                                   │
+│                                                              │
+│ Precisa de todas as soluções?                               │
+│  → Backtracking / DFS O(k·n!)                               │
+│                                                              │
+│ Otimização com subestrutura ótima?                          │
+│  → Dynamic Programming O(n²) ou O(n³)                       │
+│                                                              │
+│ Próximo elemento MAIOR/MENOR?                               │
+│  → Monotonic Stack O(n)                                     │
+│                                                              │
+│ Grafo com vizinhanças/níveis?                               │
+│  → BFS (shortest path) O(V+E)                               │
+│  → DFS (conectividade) O(V+E)                               │
+│  → Topological Sort (DAG) O(V+E)                            │
+│  → DSU (ciclos/componentes) O(α(n))                         │
+│                                                              │
+│ Substring/subarray com janela?                              │
+│  → Sliding Window O(n)                                      │
+│  → Two Pointers O(n)                                        │
+│                                                              │
+│ Contagem/frequência?                                        │
+│  → HashMap O(n) average                                     │
+│  → Heap para Top K O(n log k)                               │
+│                                                              │
+│ Escolha local ótima → global ótima?                         │
+│  → Greedy O(n) (COM PROVA!)                                 │
+│                                                              │
+│ Função é MONOTÔNICA?                                        │
+│  → Binary Search on Answer O(n log max)                     │
+└─────────────────────────────────────────────────────────────┘</code></pre>
+<hr>
+<h2>🎯 Workflow Final: Como Abordar Qualquer Problema</h2>
+<pre><code>1. LER O PROBLEMA
+   ↓
+2. SPEC: Entrada? Saída? Constraints? Edge cases?
+   ↓
+3. FORÇA BRUTA: Sempre comece com brute force!
+   (Te ensina o que precisa otimizar)
+   ↓
+4. RECONHECER PADRÃO:
+   - Grafo/Árvore? → BFS/DFS/DSU
+   - Otimização? → Função é monotônica? → Binary Search
+   - Otimização? → Subestrutura ótima? → DP
+   - Otimização? → Greedy choice? → Greedy (com prova!)
+   - Precisa todas soluções? → Backtracking
+   - Vizinhança/ordenação local? → Monotonic Stack/Two Pointers
+   - Substring/janela? → Sliding Window
+   - Frequência? → HashMap/Heap
+   - String patterns? → Trie/Regex
+   ↓
+5. PLAN: Trade-off entre técnicas
+   ↓
+6. CÓDIGO: Implementar com testes
+   ↓
+7. VALIDAR: Edge cases + complexidade</code></pre>
+<hr>
+<h2>🌳 Tree Algorithms: Traversals & Construction</h2>
+<h3>Tree Traversals (DFS Variants)</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>root: TreeNode</code></li>
+<li>Output: <code>List[int]</code> (valores em ordem específica)</li>
+<li>Padrão: <strong>In-order, Pre-order, Post-order, Level-order (BFS)</strong></li>
+<li>Propriedade: Cada tipo de traversal tem uso específico</li>
+<p><strong>Tipos de Traversal:</strong></p>
+<pre><code>     1
+   /   \
+  2     3
+
+PRE-ORDER (root, left, right):    [1, 2, 3] ← Serialization
+IN-ORDER (left, root, right):     [2, 1, 3] ← BST → sorted
+POST-ORDER (left, right, root):   [2, 3, 1] ← Delete, evaluate
+LEVEL-ORDER (BFS):                [1, 2, 3] ← Layer by layer</code></pre>
+<p><strong>CÓDIGO:</strong></p>
+<pre><code>from typing import Optional, List
+from collections import deque
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def preorder(root: Optional[TreeNode]) -&gt; List[int]:
+    """Pre-order: root → left → right."""
+    result = []
+    def dfs(node):
+        if not node: return
+        result.append(node.val)
+        dfs(node.left)
+        dfs(node.right)
+    dfs(root)
+    return result
+
+def inorder(root: Optional[TreeNode]) -&gt; List[int]:
+    """In-order: left → root → right. BST → sorted!"""
+    result = []
+    def dfs(node):
+        if not node: return
+        dfs(node.left)
+        result.append(node.val)
+        dfs(node.right)
+    dfs(root)
+    return result
+
+def postorder(root: Optional[TreeNode]) -&gt; List[int]:
+    """Post-order: left → right → root."""
+    result = []
+    def dfs(node):
+        if not node: return
+        dfs(node.left)
+        dfs(node.right)
+        result.append(node.val)
+    dfs(root)
+    return result
+
+def levelorder(root: Optional[TreeNode]) -&gt; List[List[int]]:
+    """Level-order: BFS, retorna por nível."""
+    if not root: return []
+    result, queue = [], deque([root])
+    while queue:
+        level_size = len(queue)
+        level = []
+        for _ in range(level_size):
+            node = queue.popleft()
+            level.append(node.val)
+            if node.left: queue.append(node.left)
+            if node.right: queue.append(node.right)
+        result.append(level)
+    return result
+
+# Tests
+root = TreeNode(1, TreeNode(2, TreeNode(4), TreeNode(5)), TreeNode(3))
+assert preorder(root) == [1, 2, 4, 5, 3]
+assert inorder(root) == [4, 2, 5, 1, 3]
+assert postorder(root) == [4, 5, 2, 3, 1]
+assert levelorder(root) == [[1], [2, 3], [4, 5]]
+print("✓ Tree Traversals Passed")</code></pre>
+<hr>
+<h3>Construct Tree from Preorder & Inorder</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>preorder: List[int]</code>, <code>inorder: List[int]</code></li>
+<li>Output: <code>TreeNode</code> (reconstruir árvore)</li>
+<li>Propriedade: Pre + Inorder determinam árvore unicamente</li>
+<p><strong>CÓDIGO:</strong></p>
+<pre><code>def buildTree(preorder: List[int], inorder: List[int]) -&gt; Optional[TreeNode]:
+    """Reconstruct tree from preorder &amp; inorder."""
+    if not preorder or not inorder:
+        return None
+    
+    root_val = preorder[0]
+    root = TreeNode(root_val)
+    root_idx = inorder.index(root_val)
+    
+    root.left = buildTree(preorder[1:root_idx+1], inorder[:root_idx])
+    root.right = buildTree(preorder[root_idx+1:], inorder[root_idx+1:])
+    
+    return root
+
+# Tests
+preorder = [3, 9, 20, 15, 7]
+inorder = [9, 3, 15, 20, 7]
+root = buildTree(preorder, inorder)
+assert inorder(root) == [9, 3, 15, 20, 7]
+print("✓ Construct Tree Passed")</code></pre>
+<hr>
+<h2>🔗 Linked List: Advanced Patterns</h2>
+<h3>Merge K Sorted Lists</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>lists: List[Optional[ListNode]]</code> (k listas ordenadas)</li>
+<li>Output: <code>ListNode</code> (uma lista ordenada)</li>
+<li>Padrão: <strong>Heap O(n log k)</strong> ou <strong>Divide & Conquer</strong></li>
+<p><strong>CÓDIGO:</strong></p>
+<pre><code>class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def mergeKLists(lists: List[Optional[ListNode]]) -&gt; Optional[ListNode]:
+    """Merge K lists com min-heap."""
+    if not lists: return None
+    
+    heap = []
+    for i, node in enumerate(lists):
+        if node:
+            heapq.heappush(heap, (node.val, i, node))
+    
+    dummy = ListNode(0)
+    current = dummy
+    
+    while heap:
+        val, i, node = heapq.heappop(heap)
+        current.next = node
+        current = current.next
+        if node.next:
+            heapq.heappush(heap, (node.next.val, i, node.next))
+    
+    return dummy.next
+
+# Tests
+def create_list(arr):
+    if not arr: return None
+    head = ListNode(arr[0])
+    curr = head
+    for val in arr[1:]:
+        curr.next = ListNode(val)
+        curr = curr.next
+    return head
+
+def list_to_array(node):
+    result = []
+    while node:
+        result.append(node.val)
+        node = node.next
+    return result
+
+l1 = create_list([1,4,5])
+l2 = create_list([1,3,4])
+l3 = create_list([2,6])
+result = mergeKLists([l1, l2, l3])
+assert list_to_array(result) == [1,1,2,1,3,4,4,5,6]
+print("✓ Merge K Lists Passed")</code></pre>
+<hr>
+<h3>Reorder List</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>head: ListNode</code></li>
+<li>Output: Reordena in-place: [1,2,3,4] → [1,4,2,3]</li>
+<p><strong>CÓDIGO:</strong></p>
+<pre><code>def reorderList(head: Optional[ListNode]) -&gt; None:
+    """Reorder: divide → reverse → merge alternado."""
+    if not head or not head.next: return
+    
+    # Encontra meio
+    slow = fast = head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+    
+    # Reverse segunda metade
+    second = slow.next
+    slow.next = None
+    
+    def reverse(node):
+        prev = None
+        while node:
+            next_temp = node.next
+            node.next = prev
+            prev = node
+            node = next_temp
+        return prev
+    
+    second = reverse(second)
+    
+    # Merge alternado
+    first = head
+    while first and second:
+        first_next, second_next = first.next, second.next
+        first.next = second
+        second.next = first_next
+        first = first_next
+        second = second_next
+
+# Tests
+l1 = create_list([1,2,3,4])
+reorderList(l1)
+assert list_to_array(l1) == [1,4,2,3]
+print("✓ Reorder List Passed")</code></pre>
+<hr>
+<h2>🎯 DP Avançado: LIS & LCS</h2>
+<h3>Longest Increasing Subsequence (LIS)</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>nums: List[int]</code></li>
+<li>Output: <code>int</code> (comprimento LIS)</li>
+<li>Exemplo: [10,9,2,5,3,7,101,18] → 4 ([2,3,7,101])</li>
+<p><strong>CÓDIGO O(n²):</strong></p>
+<pre><code>def lengthOfLIS(nums: List[int]) -&gt; int:
+    """LIS com DP: dp[i] = LIS terminando em i."""
+    if not nums: return 0
+    
+    n = len(nums)
+    dp = [1] * n
+    
+    for i in range(n):
+        for j in range(i):
+            if nums[j] &lt; nums[i]:
+                dp[i] = max(dp[i], dp[j] + 1)
+    
+    return max(dp)
+
+# Tests
+assert lengthOfLIS([10,9,2,5,3,7,101,18]) == 4
+assert lengthOfLIS([3,10,2,1,20]) == 3
+print("✓ LIS Passed")</code></pre>
+<p><strong>CÓDIGO O(n log n) com Binary Search:</strong></p>
+<pre><code>def lengthOfLIS_fast(nums: List[int]) -&gt; int:
+    """LIS com Binary Search."""
+    import bisect
+    tails = []
+    
+    for num in nums:
+        pos = bisect.bisect_left(tails, num)
+        if pos == len(tails):
+            tails.append(num)
+        else:
+            tails[pos] = num
+    
+    return len(tails)
+
+assert lengthOfLIS_fast([10,9,2,5,3,7,101,18]) == 4
+print("✓ LIS (Fast) Passed")</code></pre>
+<hr>
+<h3>Longest Common Subsequence (LCS)</h3>
+<p><strong>SPEC:</strong></p>
+<li>Input: <code>text1: str</code>, <code>text2: str</code></li>
+<li>Output: <code>int</code> (comprimento LCS)</li>
+<li>Exemplo: "abcde" e "ace" → 3</li>
+<p><strong>CÓDIGO:</strong></p>
+<pre><code>def longestCommonSubsequence(text1: str, text2: str) -&gt; int:
+    """LCS com DP 2D."""
+    m, n = len(text1), len(text2)
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
+    
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if text1[i-1] == text2[j-1]:
+                dp[i][j] = dp[i-1][j-1] + 1
+            else:
+                dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+    
+    return dp[m][n]
+
+# Tests
+assert longestCommonSubsequence("abcde", "ace") == 3
+assert longestCommonSubsequence("abc", "abc") == 3
+assert longestCommonSubsequence("abc", "def") == 0
+print("✓ LCS Passed")</code></pre>
+<hr>
+<p><strong>Criado em:</strong> Maio 2026</p>
+<p><strong>Versão:</strong> 1.1</p>
+<p><strong>Status:</strong> Master Reference para FAANG Preparation</p>
+        </div>
+    </body>
+</html>
