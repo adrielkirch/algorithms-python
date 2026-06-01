@@ -10,3 +10,5 @@ c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\array\hashmap\3sum.i
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\backtracking\n-queens.ipynb
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\tree\binary_traversal.ipynb
 c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\dsu-union-find-kruskal.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\number-of-connected-components-in-an-undirected-graph.ipynb
+c:\Users\w515783\Desktop\js\algorithms-python\src\exercices\graph\number_of_provinces.ipynb
